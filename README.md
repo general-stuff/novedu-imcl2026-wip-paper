@@ -57,6 +57,17 @@ pdflatex novedu-wip
 pdflatex novedu-wip
 ```
 
+The repository also contains a GitHub Actions workflow,
+[`build-wip-paper.yml`](.github/workflows/build-wip-paper.yml), that builds
+`wip-paper/novedu-wip.pdf` on pushes to `main` when files under `wip-paper/` change. The workflow
+can also be started manually from the Actions tab or with:
+
+```bash
+gh workflow run build-wip-paper.yml --ref main
+```
+
+Successful runs attach the compiled PDF as the `novedu-wip-pdf` build artifact.
+
 ## Background reference documents
 
 The nine Markdown reports give the full detail behind the paper. Roughly in the order the paper
