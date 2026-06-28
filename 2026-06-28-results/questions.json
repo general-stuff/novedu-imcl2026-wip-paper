@@ -1,0 +1,2260 @@
+{
+  "survey": "KI-Tutor Fragebogen (AI Tutor questionnaire)",
+  "description": "Survey of secondary-school students and teachers about the use of an AI tutor in class. Two separate questionnaires: students (question IDs prefixed 'S') and teachers (prefixed 'L', for 'Lehrer'). All texts are in German.",
+  "exported_at": "2026-06-28",
+  "value_encoding": {
+    "single-choice": "string — the exact option text",
+    "multiple-choice": "array of strings — exact option texts (capped at maxSelections where given)",
+    "multiple-choice-freetext": "object { selected: string[], freetext: string } — checked options plus a free-text 'other' entry",
+    "likert": "integer 1..4 (4-point scale, no neutral midpoint); see scale.minLabel/maxLabel for the meaning of 1 and 4",
+    "freetext": "string — free text",
+    "MISSING KEY": "If a question's ID is absent from a respondent's answers object, the question was not answered (optional questions and abandoned clusters). Absence != empty string."
+  },
+  "questionnaires": {
+    "student": {
+      "role": "schueler",
+      "roleLabel": "Schüler:in",
+      "clusters": [
+        {
+          "id": 0,
+          "title": "Über dich",
+          "description": "Zunächst ein paar kurze Fragen zu deinem Hintergrund — damit wir die Antworten besser einordnen können.",
+          "questions": [
+            {
+              "id": "S0.1",
+              "text": "In welche Klasse/Schulstufe gehst du?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "9. Schulstufe (1. Klasse Oberstufe)",
+                "10. Schulstufe",
+                "11. Schulstufe",
+                "12. Schulstufe",
+                "13. Schulstufe"
+              ]
+            },
+            {
+              "id": "S0.2",
+              "text": "Welchen Schwerpunkt/Zweig besuchst du?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Informatik",
+                "Wirtschaft",
+                "Naturwissenschaften",
+                "Sprachen",
+                "Sonstiger Schwerpunkt"
+              ]
+            },
+            {
+              "id": "S0.3",
+              "text": "Wie gut kennst du dich mit Computern, Apps und digitalen Tools aus?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Gar nicht gut",
+                "maxLabel": "Sehr gut",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S0.4",
+              "text": "Hast du vor diesem Fragebogen schon einmal ein KI-Tool verwendet?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Ja, regelmäßig",
+                "Ja, ein paar Mal ausprobiert",
+                "Nein, noch nie"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "title": "Deine aktuelle KI-Nutzung",
+          "description": "Hier interessiert uns, wie du KI-Tools heute bereits verwendest.",
+          "questions": [
+            {
+              "id": "S1.1",
+              "text": "Welche KI-Tools nutzt du aktuell für schulische Zwecke?",
+              "type": "multiple-choice-freetext",
+              "optional": false,
+              "options": [
+                "ChatGPT",
+                "Microsoft Copilot",
+                "Google Gemini",
+                "Perplexity",
+                "DeepL",
+                "GitHub Copilot",
+                "Grammarly",
+                "Claude Code",
+                "Claude Cowork",
+                "Novedu",
+                "Keines"
+              ]
+            },
+            {
+              "id": "S1.2",
+              "text": "Hast du für eines dieser Tools einen bezahlten Account?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Nein",
+                "Ja, bis inkl. 10 €/Monat",
+                "Ja, über 10 €/Monat",
+                "Weiß nicht (z.B. Eltern zahlen)"
+              ]
+            },
+            {
+              "id": "S1.3",
+              "text": "Wie oft nutzt du KI-Tools für schulische Aufgaben?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Täglich",
+                "Mehrmals pro Woche",
+                "Etwa einmal pro Woche",
+                "Seltener",
+                "Nie"
+              ]
+            },
+            {
+              "id": "S1.4",
+              "text": "Wofür verwendest du KI-Tools hauptsächlich für die Schule?",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Erklärungen zu Themen, die ich nicht verstehe",
+                "Hausübungen lösen oder kontrollieren",
+                "Texte schreiben oder verbessern",
+                "Übersetzungen",
+                "Programmieren und Fehlersuche im Code",
+                "Prüfungsvorbereitung",
+                "Zusammenfassungen erstellen"
+              ],
+              "maxSelections": 3
+            },
+            {
+              "id": "S1.5",
+              "text": "Auf welchem Gerät nutzt du KI-Tools am häufigsten?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Smartphone",
+                "Laptop",
+                "Desktop-PC",
+                "Tablet"
+              ]
+            },
+            {
+              "id": "S1.6",
+              "text": "Wie groß ist aktuell der Anteil von KI bei der Erledigung deiner schulischen Aufgaben?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "KI spielt keine Rolle",
+                "maxLabel": "KI erledigt den Großteil",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Nutzungsbereitschaft",
+          "description": "Stell dir vor, deine Schule bietet einen eigenen KI-Tutor an. Wie würdest du ihn nutzen?",
+          "questions": [
+            {
+              "id": "S2.1",
+              "text": "Wenn deine Schule einen KI-Tutor offiziell anbietet: Wie häufig würdest du ihn voraussichtlich nutzen?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Täglich",
+                "Mehrmals pro Woche",
+                "Etwa einmal pro Woche",
+                "Seltener",
+                "Gar nicht"
+              ]
+            },
+            {
+              "id": "S2.2",
+              "text": "In welchen Situationen würdest du einen KI-Tutor am ehesten nutzen?",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Bei Hausübungen, wenn ich nicht weiterkomme",
+                "Zur Vorbereitung auf Tests und Schularbeiten",
+                "Um Unterrichtsstoff nachzuarbeiten, den ich nicht verstanden habe",
+                "Beim Programmieren (Fehler finden, Code verstehen)",
+                "Um Texte zu verbessern oder Feedback zu bekommen",
+                "Zum eigenständigen Vertiefen über den Unterricht hinaus"
+              ],
+              "maxSelections": 3
+            },
+            {
+              "id": "S2.3",
+              "text": "Würdest du den KI-Tutor eher zu Hause, im Unterricht oder beides nutzen?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Hauptsächlich zu Hause",
+                "Hauptsächlich im Unterricht",
+                "Beides gleichermaßen",
+                "Weiß ich noch nicht"
+              ]
+            },
+            {
+              "id": "S2.4",
+              "text": "Für welche Fächer würdest du dir KI-Unterstützung am dringendsten wünschen?",
+              "type": "multiple-choice-freetext",
+              "optional": false,
+              "options": [
+                "Angewandte Mathematik",
+                "Programmierunterricht",
+                "Deutsch",
+                "Englisch",
+                "Biologie",
+                "Physik"
+              ],
+              "maxSelections": 3
+            },
+            {
+              "id": "S2.5",
+              "text": "Was müsste ein schulischer KI-Tutor besser können als die KI-Tools, die du jetzt schon nutzt (z.B. ChatGPT), damit du ihn bevorzugt verwendest?",
+              "type": "freetext",
+              "optional": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Gewünschte Funktionen",
+          "description": "Was soll der KI-Tutor konkret können? Hier geht es um Features und Funktionsweise.",
+          "questions": [
+            {
+              "id": "S3.1",
+              "text": "Wähle die 3 Funktionen, die dir bei einem KI-Tutor am wichtigsten wären.",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Neue Übungsbeispiele erstellen, die zu meinem Wissensstand passen",
+                "Stoff Schritt für Schritt erklären",
+                "Bei Aufgaben Hinweise geben, ohne die Lösung zu verraten",
+                "Meine Texte oder meinen Code korrigieren und Rückmeldung geben",
+                "Zusammenfassungen von Unterrichtsmaterial erstellen",
+                "Quellen und weiterführende Links anbieten",
+                "Sich an mein Lerntempo und meinen Wissensstand anpassen"
+              ],
+              "maxSelections": 3
+            },
+            {
+              "id": "S3.2",
+              "text": "Wie soll der KI-Tutor Inhalte am liebsten erklären?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Schritt-für-Schritt-Anleitungen",
+                "Kurze, knappe Antworten",
+                "Mit Beispielen und Vergleichen aus dem Alltag",
+                "Mit Bildern und Diagrammen",
+                "Das hängt vom Thema ab — ich möchte wählen können"
+              ]
+            },
+            {
+              "id": "S3.3",
+              "text": "Wenn du bei einer Aufgabe nicht weiterkommst: Wie soll der KI-Tutor dir helfen?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Einen Hinweis geben, der mich in die richtige Richtung lenkt",
+                "Den nächsten Lösungsschritt zeigen, aber nicht die ganze Lösung",
+                "Die komplette Lösung zeigen und erklären",
+                "Erst fragen, wo genau ich hänge, und dann gezielt helfen"
+              ]
+            },
+            {
+              "id": "S3.4",
+              "text": "Wie wichtig ist es dir, dass der KI-Tutor genau die Inhalte deines Unterrichts kennt (z.B. die Regeln und Ziele eurer Übungen)?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Unwichtig",
+                "maxLabel": "Sehr wichtig",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S3.5",
+              "text": "Sollte der KI-Tutor Erklärungen auch in vereinfachter Sprache oder in einer anderen Sprache als Deutsch anbieten können?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Ja, vereinfachte Sprache wäre hilfreich",
+                "Ja, Erklärungen in einer anderen Sprache (z.B. Englisch, Muttersprache) wären hilfreich",
+                "Beides wäre hilfreich",
+                "Nein, Deutsch reicht völlig"
+              ]
+            },
+            {
+              "id": "S3.6",
+              "text": "Welche Funktion fehlt dir bei den KI-Tools, die du bisher kennst?",
+              "type": "freetext",
+              "optional": true
+            },
+            {
+              "id": "S3.7",
+              "text": "Wie hilfreich wäre es für dich, wenn du für Themen ohne bestehenden KI-Tutor selbst einen eigenen Tutor erstellen könntest?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Gar nicht hilfreich",
+                "maxLabel": "Sehr hilfreich",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Lernwirksamkeit",
+          "description": "Wie schätzt du den Einfluss von KI auf deinen Lernerfolg ein?",
+          "questions": [
+            {
+              "id": "S4.1",
+              "text": "Wenn du KI zum Lernen verwendest: Nutzt du sie eher als Lernhilfe (um etwas wirklich zu verstehen) oder als Abkürzung (um Aufgaben schnell zu erledigen)?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Ausschließlich als Lernhilfe",
+                "maxLabel": "Ausschließlich als Abkürzung",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S4.2",
+              "text": "Ich verstehe ein Thema durch KI-Erklärungen besser als durch das Lehrbuch oder den Unterricht allein.",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Stimme gar nicht zu",
+                "maxLabel": "Stimme voll zu",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S4.3",
+              "text": "Ein KI-Tutor sollte mich dazu bringen, selbst nachzudenken, statt mir fertige Antworten zu liefern.",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Stimme gar nicht zu",
+                "maxLabel": "Stimme voll zu",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S4.4",
+              "text": "Glaubst du, dass der Einsatz von KI deinen Lernerfolg langfristig verbessert?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Gar nicht",
+                "maxLabel": "Sehr stark",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S4.5",
+              "text": "In welchen Bereichen könnte KI deinen Lernerfolg am meisten verbessern?",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Personalisiertes Lerntempo",
+                "Bessere Erklärungen als im Lehrbuch",
+                "Sofort verfügbare Hilfe, auch außerhalb des Unterrichts",
+                "Gezielte Vorbereitung auf Prüfungen",
+                "Individuelles Feedback auf meine Aufgaben",
+                "Motivation und Abwechslung beim Lernen"
+              ],
+              "maxSelections": 3
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Risiken & Fairness",
+          "description": "Jede Technologie hat auch Schattenseiten. Wie siehst du die Risiken?",
+          "questions": [
+            {
+              "id": "S5.1",
+              "text": "Wie groß ist die Versuchung für dich, Hausübungen oder Aufgaben vom KI-Tutor komplett lösen zu lassen?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Sehr klein",
+                "maxLabel": "Sehr groß",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S5.2",
+              "text": "Wenn der KI-Tutor manchmal falsch liegt: Würdest du ihn trotzdem nutzen, wenn er meistens gut hilft?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Auf keinen Fall",
+                "maxLabel": "Auf jeden Fall",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S5.3",
+              "text": "Wie oft würdest du KI-Antworten überprüfen (z.B. in Heft, Buch oder Internet), bevor du sie übernimmst?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Immer",
+                "Meistens",
+                "Manchmal",
+                "Selten",
+                "Nie"
+              ]
+            },
+            {
+              "id": "S5.4",
+              "text": "Ich empfinde es als unfair, wenn manche Mitschüler:innen KI intensiver nutzen als andere.",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Stimme gar nicht zu",
+                "maxLabel": "Stimme voll zu",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S5.5",
+              "text": "Ich mache mir Sorgen, dass ich durch KI-Nutzung weniger selbst lerne und zu abhängig werde.",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Stimme gar nicht zu",
+                "maxLabel": "Stimme voll zu",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Datenschutz & Vertrauen",
+          "description": "Wie wichtig ist dir der Schutz deiner Daten beim KI-Tutor?",
+          "questions": [
+            {
+              "id": "S6.1",
+              "text": "Wie wichtig ist dir, dass du beim KI-Tutor keine persönlichen Daten (Name, Noten, private Infos) eingeben musst?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Unwichtig",
+                "maxLabel": "Sehr wichtig",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "S6.2",
+              "text": "Was hältst du davon, wenn deine Lehrperson die Chats der Klasse mit dem KI-Tutor mitlesen kann — allerdings ohne zu wissen, welcher Chat von wem stammt?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Finde ich gut, das hilft beim Lernen",
+                "Ist mir egal",
+                "Finde ich unangenehm, auch wenn niemand weiß, dass es mein Chat ist",
+                "Nur wenn ich vorher informiert werde"
+              ]
+            },
+            {
+              "id": "S6.3",
+              "text": "Wofür wäre es für dich in Ordnung, wenn deine Lehrperson Chats der Klasse mitlesen kann (ohne zu wissen, von wem sie sind)?",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Um den Unterricht besser an unsere Fragen anzupassen",
+                "Um häufige Missverständnisse zu erkennen",
+                "Um zu sehen, ob der KI-Tutor gut funktioniert",
+                "Für keinen Zweck — meine Chats sollen privat bleiben"
+              ]
+            },
+            {
+              "id": "S6.4",
+              "text": "Würdest du dem KI-Tutor mehr vertrauen, wenn er dir zeigt, woher er seine Antworten hat (z.B. aus deinem Schulbuch oder dem Unterrichtsmaterial)?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Ja, Quellenangaben sind mir wichtig",
+                "Wäre nett, aber nicht entscheidend",
+                "Nein, mir reicht eine gute Antwort",
+                "Ich würde die Quellen ohnehin nicht überprüfen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Abschluss & offene Fragen",
+          "description": "Fast geschafft! Zum Schluss noch ein paar offene Fragen.",
+          "questions": [
+            {
+              "id": "S7.1",
+              "text": "Was wäre für dich ein absolutes No-Go bei einem KI-Tutor?",
+              "type": "freetext",
+              "optional": false
+            },
+            {
+              "id": "S7.2",
+              "text": "Wo siehst du den größten Mehrwert eines KI-Tutors für dich persönlich?",
+              "type": "freetext",
+              "optional": false
+            },
+            {
+              "id": "S7.3",
+              "text": "Gibt es sonst noch etwas, das du uns zum Thema KI im Unterricht mitteilen möchtest?",
+              "type": "freetext",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    },
+    "teacher": {
+      "role": "lehrer",
+      "roleLabel": "Lehrer:in",
+      "clusters": [
+        {
+          "id": 0,
+          "title": "Über Sie",
+          "description": "Zunächst einige kurze Fragen zu Ihrem beruflichen Hintergrund.",
+          "questions": [
+            {
+              "id": "L0.1",
+              "text": "Welche Fächer unterrichten Sie?",
+              "type": "multiple-choice-freetext",
+              "optional": false,
+              "options": [
+                "Angewandte Mathematik",
+                "Programmierunterricht",
+                "Deutsch",
+                "Englisch",
+                "Biologie",
+                "Physik",
+                "Wirtschaft"
+              ]
+            },
+            {
+              "id": "L0.2",
+              "text": "Wie lange unterrichten Sie bereits?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Unter 5 Jahre",
+                "5–15 Jahre",
+                "Über 15 Jahre"
+              ]
+            },
+            {
+              "id": "L0.3",
+              "text": "Wie sicher fühlen Sie sich im Umgang mit digitalen Lerntools?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Sehr unsicher",
+                "maxLabel": "Sehr sicher",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "L0.4",
+              "text": "Haben Sie bereits KI-Tools im Unterricht mit Schüler:innen eingesetzt (nicht nur für Vorbereitung)?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Ja, regelmäßig",
+                "Ja, vereinzelt ausprobiert",
+                "Nein, aber ich plane es",
+                "Nein, und ich habe es auch nicht vor"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "title": "Ihre aktuelle KI-Nutzung",
+          "description": "Wie setzen Sie KI-Tools aktuell in Ihrem beruflichen Alltag ein?",
+          "questions": [
+            {
+              "id": "L1.1",
+              "text": "Welche KI-Tools setzen Sie aktuell im beruflichen Kontext ein (Unterrichtsvorbereitung, Materialerstellung, Verwaltung)?",
+              "type": "multiple-choice-freetext",
+              "optional": false,
+              "options": [
+                "ChatGPT",
+                "Microsoft Copilot",
+                "Google Gemini",
+                "Perplexity",
+                "DeepL",
+                "Spezialtools (z.B. MagicSchool, Diffit)",
+                "Novedu",
+                "Keines"
+              ]
+            },
+            {
+              "id": "L1.2",
+              "text": "Wie oft nutzen Sie KI-Tools für Ihre berufliche Tätigkeit?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Täglich",
+                "Mehrmals pro Woche",
+                "Etwa einmal pro Woche",
+                "Seltener",
+                "Nie"
+              ]
+            },
+            {
+              "id": "L1.3",
+              "text": "Wofür verwenden Sie KI-Tools hauptsächlich?",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Unterrichtsvorbereitung (Materialien, Arbeitsblätter)",
+                "Aufgaben und Prüfungen erstellen",
+                "Texte verfassen oder korrigieren",
+                "Differenzierung und Individualisierung",
+                "Eigene Weiterbildung",
+                "Verwaltungsaufgaben"
+              ],
+              "maxSelections": 3
+            },
+            {
+              "id": "L1.4",
+              "text": "Haben Sie für eines dieser Tools einen bezahlten Account (privat oder schulfinanziert)?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Nein",
+                "Ja, privat finanziert",
+                "Ja, von der Schule bereitgestellt",
+                "Weiß nicht"
+              ]
+            },
+            {
+              "id": "L1.5",
+              "text": "Wie schätzen Sie das KI-Nutzungsverhalten Ihrer Schüler:innen ein?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Die meisten nutzen KI regelmäßig",
+                "Einige nutzen KI, die Mehrheit nicht",
+                "Kaum jemand nutzt KI",
+                "Ich kann das nicht einschätzen"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Nutzungsbereitschaft & Szenarien",
+          "description": "Wie würden Sie einen schulischen KI-Tutor in Ihren Unterricht einbinden?",
+          "questions": [
+            {
+              "id": "L2.1",
+              "text": "Wenn ein KI-Tutor an Ihrer Schule verfügbar wäre: Wie häufig würden Sie ihn in Ihren Unterricht einbinden?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Regelmäßig (wöchentlich oder häufiger)",
+                "Gelegentlich (ein paar Mal pro Monat)",
+                "Selten (für bestimmte Themen/Projekte)",
+                "Gar nicht"
+              ]
+            },
+            {
+              "id": "L2.2",
+              "text": "Für welche Unterrichtsszenarien könnten Sie sich den Einsatz eines KI-Tutors am ehesten vorstellen?",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Hausübungsbegleitung (Schüler:innen arbeiten zu Hause mit dem Tutor)",
+                "Übungsphasen im Unterricht",
+                "Vorbereitung auf Tests und Schularbeiten",
+                "Differenzierung (unterschiedliche Niveaus in einer Klasse)",
+                "Nachhilfe-Ersatz für schwächere Schüler:innen",
+                "Vertiefung für leistungsstarke Schüler:innen"
+              ],
+              "maxSelections": 3
+            },
+            {
+              "id": "L2.3",
+              "text": "Wären Sie bereit, eigene Lektionen (Workspaces) für den KI-Tutor zu erstellen — also Unterlagen hochzuladen und Anweisungen für die KI zu formulieren?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Ja, das klingt sinnvoll",
+                "Ja, wenn es einfach und schnell geht (unter 15 Min. pro Lektion)",
+                "Nur wenn fertige Vorlagen vorhanden sind, die ich anpassen kann",
+                "Nein, das ist mir zu aufwendig"
+              ]
+            },
+            {
+              "id": "L2.4",
+              "text": "Sollte der KI-Tutor nur zu bestimmten Zeiten verfügbar sein (z.B. während Lernphasen) oder permanent?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Permanent verfügbar",
+                "Nur zu von mir definierten Zeiten",
+                "Nur außerhalb des Unterrichts (zu Hause)",
+                "Keine Meinung"
+              ]
+            },
+            {
+              "id": "L2.5",
+              "text": "Warum würden Sie einen KI-Tutor in Ihrem Fach einsetzen?",
+              "type": "multiple-choice-freetext",
+              "optional": false,
+              "options": [
+                "Entlastung bei Routinefragen der Schüler:innen",
+                "Individuellere Betreuung ermöglichen",
+                "Schüler:innen zum eigenständigen Lernen anregen",
+                "Modernisierung des Unterrichts",
+                "Bessere Vorbereitung der Schüler:innen auf Prüfungen"
+              ],
+              "maxSelections": 3
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "title": "Gewünschte Funktionen",
+          "description": "Welche Funktionen und Eigenschaften sollte der KI-Tutor aus Ihrer Sicht mitbringen?",
+          "questions": [
+            {
+              "id": "L3.1",
+              "text": "Welche 3 Eigenschaften sind Ihnen bei einem KI-Tutor für Ihren Unterricht am wichtigsten?",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Fachliche Korrektheit der Antworten",
+                "Anpassung an meinen Lehrplan und meine Materialien",
+                "Keine Preisgabe von Lösungen an Schüler:innen",
+                "Differenzierung nach Leistungsniveau",
+                "Nachvollziehbare Quellenangaben",
+                "Einfache Erstellung von Workspaces",
+                "Auswertung der Schüler:innen-Nutzung (Lernfortschritt)"
+              ],
+              "maxSelections": 3
+            },
+            {
+              "id": "L3.2",
+              "text": "Wie wichtig ist es, dass der KI-Tutor Inhalte am Lehrplan bzw. Ihrer Jahresplanung ausrichtet statt allgemeine Erklärungen zu geben?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Unwichtig",
+                "maxLabel": "Sehr wichtig",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "L3.3",
+              "text": "Wie soll der KI-Tutor bei Aufgaben helfen, wenn Schüler:innen nicht weiterkommen?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Nur Hinweise, niemals die Lösung",
+                "Schrittweise Hilfe, die Lösung erst nach mehreren Versuchen",
+                "Das soll je nach Workspace einstellbar sein",
+                "Die Schüler:innen sollen selbst wählen können"
+              ]
+            },
+            {
+              "id": "L3.4",
+              "text": "Wie sinnvoll fänden Sie KI-Unterstützung beim Debugging direkt im Unterricht (nicht nur zu Hause)?",
+              "type": "likert",
+              "optional": true,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Nicht sinnvoll",
+                "maxLabel": "Sehr sinnvoll",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "L3.5",
+              "text": "Welche Integrationen mit bestehenden Systemen wären für Sie relevant?",
+              "type": "multiple-choice-freetext",
+              "optional": false,
+              "options": [
+                "Lernplattform/LMS (z.B. Moodle, MS Teams)",
+                "Elektronisches Klassenbuch",
+                "Schulinterne Dateiablage",
+                "Programmierwerkzeuge (z.B. GitHub, IDE-Integration)",
+                "Keine Integration nötig"
+              ]
+            },
+            {
+              "id": "L3.6",
+              "text": "Sollte der KI-Tutor Erklärungen auch in vereinfachter Sprache oder in einer anderen Sprache als Deutsch anbieten können?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Ja, das wäre für einige meiner Schüler:innen wichtig",
+                "Wäre ein nettes Extra, aber nicht prioritär",
+                "Nein, der Unterricht findet auf Deutsch statt, der Tutor sollte das auch",
+                "Bin unsicher"
+              ]
+            },
+            {
+              "id": "L3.7",
+              "text": "Welche Funktion würden Sie sich bei einem KI-Tutor am meisten wünschen, die es bisher in keinem Tool gibt?",
+              "type": "freetext",
+              "optional": true
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "title": "Lernwirksamkeit",
+          "description": "Wie schätzen Sie den pädagogischen Nutzen eines KI-Tutors ein?",
+          "infoText": "Ein **KI-Tutor** ist ein digitales, auf KI-basierendes Tool, das Schüler:innen bei ihren Lernaufgaben unterstützt. Er kann Erklärungen liefern, Hilfestellungen geben, individuelle Lernpfade anbieten und sich an den Lehrplan anpassen. Im Gegensatz zu allgemeinen KI-Tools ist der **KI-Tutor** speziell für den Einsatz im Unterricht konzipiert.",
+          "questions": [
+            {
+              "id": "L4.1",
+              "text": "Ein KI-Tutor unterstützt Differenzierung im Unterricht sinnvoll (z.B. unterschiedliche Aufgabenniveaus, individuelles Tempo).",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Stimme gar nicht zu",
+                "maxLabel": "Stimme voll zu",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "L4.2",
+              "text": "Ein KI-Tutor stärkt die Problemlösekompetenz der Schüler:innen, statt reines Abschreiben zu fördern.",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Stimme gar nicht zu",
+                "maxLabel": "Stimme voll zu",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "L4.3",
+              "text": "In welchen Bereichen sehen Sie den größten pädagogischen Mehrwert eines KI-Tutors?",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Personalisiertes Lernen (individuelle Lernpfade)",
+                "Entlastung bei Routineerklärungen",
+                "Förderung schwächerer Schüler:innen",
+                "Forderung leistungsstarker Schüler:innen",
+                "Zeitnahe Rückmeldung auf Aufgaben",
+                "Förderung von Medienkompetenz und kritischem Denken"
+              ],
+              "maxSelections": 3
+            },
+            {
+              "id": "L4.4",
+              "text": "Sollte ein KI-Tutor gelegentlich bewusst Rückfragen stellen oder Denkanstöße geben, statt direkt zu antworten — auch wenn das für Schüler:innen frustrierend sein kann?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Ja, das fördert kritisches Denken",
+                "Ja, aber nur wenn es im Workspace so konfiguriert ist",
+                "Nein, das frustriert die Schüler:innen unnötig",
+                "Bin unsicher"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "title": "Risiken & Fairness",
+          "description": "Welche Risiken sehen Sie beim Einsatz von KI im Unterricht?",
+          "questions": [
+            {
+              "id": "L5.1",
+              "text": "Wie hoch schätzen Sie das Risiko ein, dass falsche KI-Antworten bei Schüler:innen zu Fehlvorstellungen führen?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Sehr gering",
+                "maxLabel": "Sehr hoch",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "L5.2",
+              "text": "Wenn KI im Unterricht erlaubt ist: Sollten klare, einheitliche Regeln für alle Schüler:innen gelten?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Ja, schulweite Regeln",
+                "Ja, aber jede Lehrperson legt eigene Regeln fest",
+                "Nein, die Schüler:innen sollen eigenverantwortlich entscheiden",
+                "Bin unsicher"
+              ]
+            },
+            {
+              "id": "L5.3",
+              "text": "Welche Art von KI-Unterstützung wäre bei Tests oder Schularbeiten aus Ihrer Sicht akzeptabel?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Keine KI-Nutzung bei Prüfungen",
+                "Nur grundlegende Funktionen wie Rechtschreibprüfung, Übersetzung, etc.",
+                "KI als Hilfsmittel erlaubt, wenn die Aufgabenstellung darauf ausgelegt ist"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "title": "Datenschutz & Vertrauen",
+          "description": "Datenschutz im schulischen Kontext ist besonders sensibel. Wie sehen Sie das?",
+          "questions": [
+            {
+              "id": "L6.1",
+              "text": "Wie wichtig wäre Ihnen, dass nachvollziehbar ist, wie Schüler:innen den KI-Tutor genutzt haben (z.B. Verlauf, Häufigkeit, Themen)?",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Unwichtig",
+                "maxLabel": "Sehr wichtig",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "L6.2",
+              "text": "Welche Art von Nutzungsdaten sollten Sie als Lehrperson einsehen können?",
+              "type": "multiple-choice",
+              "optional": false,
+              "options": [
+                "Aggregierte Statistiken (z.B. „70% der Klasse hatten Fragen zu Thema X\")",
+                "Individuelle Nutzungsfrequenz pro Schüler:in (ohne Chatinhalte)",
+                "Anonymisierte Chat-Verläufe",
+                "Individuell zugeordnete Chat-Verläufe",
+                "Keine Einsicht nötig"
+              ]
+            },
+            {
+              "id": "L6.3",
+              "text": "Welche Datenschutz-Anforderungen sind für Sie zwingend?",
+              "type": "multiple-choice-freetext",
+              "optional": false,
+              "options": [
+                "DSGVO-konforme Datenverarbeitung in der EU",
+                "Keine Weitergabe von Daten an Dritte",
+                "Keine dauerhafte Speicherung von Chat-Verläufen",
+                "Eltern-Informationspflicht bei Nutzung durch Minderjährige",
+                "Regelmäßige Datenlöschung"
+              ]
+            },
+            {
+              "id": "L6.4",
+              "text": "Wer sollte Ihrer Meinung nach über die Datenschutz-Einstellungen des KI-Tutors entscheiden?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Die Schulleitung zentral",
+                "Jede Lehrperson für ihren eigenen Workspace",
+                "Gemeinsam im Kollegium",
+                "Das sollte gesetzlich vorgegeben sein"
+              ]
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "title": "Abschluss & offene Fragen",
+          "description": "Zum Schluss noch einige übergreifende Einschätzungen und Raum für Ihre Rückmeldungen.",
+          "questions": [
+            {
+              "id": "L7.1",
+              "text": "Ich fühle mich ausreichend vorbereitet, KI-Nutzung bei Schüler:innen pädagogisch zu begleiten.",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Stimme gar nicht zu",
+                "maxLabel": "Stimme voll zu",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "L7.2",
+              "text": "Es braucht Fortbildungen für Lehrpersonen zum pädagogischen Einsatz von KI.",
+              "type": "likert",
+              "optional": false,
+              "scale": {
+                "min": 1,
+                "max": 4,
+                "minLabel": "Stimme gar nicht zu",
+                "maxLabel": "Stimme voll zu",
+                "values": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            },
+            {
+              "id": "L7.3",
+              "text": "Wie gut kennen Sie die rechtlichen Rahmenbedingungen für KI im Bildungsbereich (z.B. EU AI Act, DSGVO-Anforderungen)?",
+              "type": "single-choice",
+              "optional": false,
+              "options": [
+                "Gut informiert",
+                "Grundlegendes Verständnis",
+                "Habe davon gehört, kenne Details nicht",
+                "Kenne mich damit nicht aus"
+              ]
+            },
+            {
+              "id": "L7.4",
+              "text": "Was wäre für Sie ein absolutes No-Go bei einem KI-Tutor?",
+              "type": "freetext",
+              "optional": false
+            },
+            {
+              "id": "L7.5",
+              "text": "Gibt es sonst noch etwas, das Sie uns zum Thema KI im Unterricht mitteilen möchten?",
+              "type": "freetext",
+              "optional": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "questions_by_id": {
+    "S0.1": {
+      "group": "student",
+      "cluster_id": 0,
+      "cluster_title": "Über dich",
+      "text": "In welche Klasse/Schulstufe gehst du?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "9. Schulstufe (1. Klasse Oberstufe)",
+        "10. Schulstufe",
+        "11. Schulstufe",
+        "12. Schulstufe",
+        "13. Schulstufe"
+      ]
+    },
+    "S0.2": {
+      "group": "student",
+      "cluster_id": 0,
+      "cluster_title": "Über dich",
+      "text": "Welchen Schwerpunkt/Zweig besuchst du?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Informatik",
+        "Wirtschaft",
+        "Naturwissenschaften",
+        "Sprachen",
+        "Sonstiger Schwerpunkt"
+      ]
+    },
+    "S0.3": {
+      "group": "student",
+      "cluster_id": 0,
+      "cluster_title": "Über dich",
+      "text": "Wie gut kennst du dich mit Computern, Apps und digitalen Tools aus?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Gar nicht gut",
+        "maxLabel": "Sehr gut"
+      }
+    },
+    "S0.4": {
+      "group": "student",
+      "cluster_id": 0,
+      "cluster_title": "Über dich",
+      "text": "Hast du vor diesem Fragebogen schon einmal ein KI-Tool verwendet?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Ja, regelmäßig",
+        "Ja, ein paar Mal ausprobiert",
+        "Nein, noch nie"
+      ]
+    },
+    "S1.1": {
+      "group": "student",
+      "cluster_id": 1,
+      "cluster_title": "Deine aktuelle KI-Nutzung",
+      "text": "Welche KI-Tools nutzt du aktuell für schulische Zwecke?",
+      "type": "multiple-choice-freetext",
+      "optional": false,
+      "options": [
+        "ChatGPT",
+        "Microsoft Copilot",
+        "Google Gemini",
+        "Perplexity",
+        "DeepL",
+        "GitHub Copilot",
+        "Grammarly",
+        "Claude Code",
+        "Claude Cowork",
+        "Novedu",
+        "Keines"
+      ]
+    },
+    "S1.2": {
+      "group": "student",
+      "cluster_id": 1,
+      "cluster_title": "Deine aktuelle KI-Nutzung",
+      "text": "Hast du für eines dieser Tools einen bezahlten Account?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Nein",
+        "Ja, bis inkl. 10 €/Monat",
+        "Ja, über 10 €/Monat",
+        "Weiß nicht (z.B. Eltern zahlen)"
+      ]
+    },
+    "S1.3": {
+      "group": "student",
+      "cluster_id": 1,
+      "cluster_title": "Deine aktuelle KI-Nutzung",
+      "text": "Wie oft nutzt du KI-Tools für schulische Aufgaben?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Täglich",
+        "Mehrmals pro Woche",
+        "Etwa einmal pro Woche",
+        "Seltener",
+        "Nie"
+      ]
+    },
+    "S1.4": {
+      "group": "student",
+      "cluster_id": 1,
+      "cluster_title": "Deine aktuelle KI-Nutzung",
+      "text": "Wofür verwendest du KI-Tools hauptsächlich für die Schule?",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Erklärungen zu Themen, die ich nicht verstehe",
+        "Hausübungen lösen oder kontrollieren",
+        "Texte schreiben oder verbessern",
+        "Übersetzungen",
+        "Programmieren und Fehlersuche im Code",
+        "Prüfungsvorbereitung",
+        "Zusammenfassungen erstellen"
+      ],
+      "maxSelections": 3
+    },
+    "S1.5": {
+      "group": "student",
+      "cluster_id": 1,
+      "cluster_title": "Deine aktuelle KI-Nutzung",
+      "text": "Auf welchem Gerät nutzt du KI-Tools am häufigsten?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Smartphone",
+        "Laptop",
+        "Desktop-PC",
+        "Tablet"
+      ]
+    },
+    "S1.6": {
+      "group": "student",
+      "cluster_id": 1,
+      "cluster_title": "Deine aktuelle KI-Nutzung",
+      "text": "Wie groß ist aktuell der Anteil von KI bei der Erledigung deiner schulischen Aufgaben?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "KI spielt keine Rolle",
+        "maxLabel": "KI erledigt den Großteil"
+      }
+    },
+    "S2.1": {
+      "group": "student",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft",
+      "text": "Wenn deine Schule einen KI-Tutor offiziell anbietet: Wie häufig würdest du ihn voraussichtlich nutzen?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Täglich",
+        "Mehrmals pro Woche",
+        "Etwa einmal pro Woche",
+        "Seltener",
+        "Gar nicht"
+      ]
+    },
+    "S2.2": {
+      "group": "student",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft",
+      "text": "In welchen Situationen würdest du einen KI-Tutor am ehesten nutzen?",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Bei Hausübungen, wenn ich nicht weiterkomme",
+        "Zur Vorbereitung auf Tests und Schularbeiten",
+        "Um Unterrichtsstoff nachzuarbeiten, den ich nicht verstanden habe",
+        "Beim Programmieren (Fehler finden, Code verstehen)",
+        "Um Texte zu verbessern oder Feedback zu bekommen",
+        "Zum eigenständigen Vertiefen über den Unterricht hinaus"
+      ],
+      "maxSelections": 3
+    },
+    "S2.3": {
+      "group": "student",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft",
+      "text": "Würdest du den KI-Tutor eher zu Hause, im Unterricht oder beides nutzen?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Hauptsächlich zu Hause",
+        "Hauptsächlich im Unterricht",
+        "Beides gleichermaßen",
+        "Weiß ich noch nicht"
+      ]
+    },
+    "S2.4": {
+      "group": "student",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft",
+      "text": "Für welche Fächer würdest du dir KI-Unterstützung am dringendsten wünschen?",
+      "type": "multiple-choice-freetext",
+      "optional": false,
+      "options": [
+        "Angewandte Mathematik",
+        "Programmierunterricht",
+        "Deutsch",
+        "Englisch",
+        "Biologie",
+        "Physik"
+      ],
+      "maxSelections": 3
+    },
+    "S2.5": {
+      "group": "student",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft",
+      "text": "Was müsste ein schulischer KI-Tutor besser können als die KI-Tools, die du jetzt schon nutzt (z.B. ChatGPT), damit du ihn bevorzugt verwendest?",
+      "type": "freetext",
+      "optional": false
+    },
+    "S3.1": {
+      "group": "student",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Wähle die 3 Funktionen, die dir bei einem KI-Tutor am wichtigsten wären.",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Neue Übungsbeispiele erstellen, die zu meinem Wissensstand passen",
+        "Stoff Schritt für Schritt erklären",
+        "Bei Aufgaben Hinweise geben, ohne die Lösung zu verraten",
+        "Meine Texte oder meinen Code korrigieren und Rückmeldung geben",
+        "Zusammenfassungen von Unterrichtsmaterial erstellen",
+        "Quellen und weiterführende Links anbieten",
+        "Sich an mein Lerntempo und meinen Wissensstand anpassen"
+      ],
+      "maxSelections": 3
+    },
+    "S3.2": {
+      "group": "student",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Wie soll der KI-Tutor Inhalte am liebsten erklären?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Schritt-für-Schritt-Anleitungen",
+        "Kurze, knappe Antworten",
+        "Mit Beispielen und Vergleichen aus dem Alltag",
+        "Mit Bildern und Diagrammen",
+        "Das hängt vom Thema ab — ich möchte wählen können"
+      ]
+    },
+    "S3.3": {
+      "group": "student",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Wenn du bei einer Aufgabe nicht weiterkommst: Wie soll der KI-Tutor dir helfen?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Einen Hinweis geben, der mich in die richtige Richtung lenkt",
+        "Den nächsten Lösungsschritt zeigen, aber nicht die ganze Lösung",
+        "Die komplette Lösung zeigen und erklären",
+        "Erst fragen, wo genau ich hänge, und dann gezielt helfen"
+      ]
+    },
+    "S3.4": {
+      "group": "student",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Wie wichtig ist es dir, dass der KI-Tutor genau die Inhalte deines Unterrichts kennt (z.B. die Regeln und Ziele eurer Übungen)?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Unwichtig",
+        "maxLabel": "Sehr wichtig"
+      }
+    },
+    "S3.5": {
+      "group": "student",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Sollte der KI-Tutor Erklärungen auch in vereinfachter Sprache oder in einer anderen Sprache als Deutsch anbieten können?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Ja, vereinfachte Sprache wäre hilfreich",
+        "Ja, Erklärungen in einer anderen Sprache (z.B. Englisch, Muttersprache) wären hilfreich",
+        "Beides wäre hilfreich",
+        "Nein, Deutsch reicht völlig"
+      ]
+    },
+    "S3.6": {
+      "group": "student",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Welche Funktion fehlt dir bei den KI-Tools, die du bisher kennst?",
+      "type": "freetext",
+      "optional": true
+    },
+    "S3.7": {
+      "group": "student",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Wie hilfreich wäre es für dich, wenn du für Themen ohne bestehenden KI-Tutor selbst einen eigenen Tutor erstellen könntest?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Gar nicht hilfreich",
+        "maxLabel": "Sehr hilfreich"
+      }
+    },
+    "S4.1": {
+      "group": "student",
+      "cluster_id": 4,
+      "cluster_title": "Lernwirksamkeit",
+      "text": "Wenn du KI zum Lernen verwendest: Nutzt du sie eher als Lernhilfe (um etwas wirklich zu verstehen) oder als Abkürzung (um Aufgaben schnell zu erledigen)?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Ausschließlich als Lernhilfe",
+        "maxLabel": "Ausschließlich als Abkürzung"
+      }
+    },
+    "S4.2": {
+      "group": "student",
+      "cluster_id": 4,
+      "cluster_title": "Lernwirksamkeit",
+      "text": "Ich verstehe ein Thema durch KI-Erklärungen besser als durch das Lehrbuch oder den Unterricht allein.",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Stimme gar nicht zu",
+        "maxLabel": "Stimme voll zu"
+      }
+    },
+    "S4.3": {
+      "group": "student",
+      "cluster_id": 4,
+      "cluster_title": "Lernwirksamkeit",
+      "text": "Ein KI-Tutor sollte mich dazu bringen, selbst nachzudenken, statt mir fertige Antworten zu liefern.",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Stimme gar nicht zu",
+        "maxLabel": "Stimme voll zu"
+      }
+    },
+    "S4.4": {
+      "group": "student",
+      "cluster_id": 4,
+      "cluster_title": "Lernwirksamkeit",
+      "text": "Glaubst du, dass der Einsatz von KI deinen Lernerfolg langfristig verbessert?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Gar nicht",
+        "maxLabel": "Sehr stark"
+      }
+    },
+    "S4.5": {
+      "group": "student",
+      "cluster_id": 4,
+      "cluster_title": "Lernwirksamkeit",
+      "text": "In welchen Bereichen könnte KI deinen Lernerfolg am meisten verbessern?",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Personalisiertes Lerntempo",
+        "Bessere Erklärungen als im Lehrbuch",
+        "Sofort verfügbare Hilfe, auch außerhalb des Unterrichts",
+        "Gezielte Vorbereitung auf Prüfungen",
+        "Individuelles Feedback auf meine Aufgaben",
+        "Motivation und Abwechslung beim Lernen"
+      ],
+      "maxSelections": 3
+    },
+    "S5.1": {
+      "group": "student",
+      "cluster_id": 5,
+      "cluster_title": "Risiken & Fairness",
+      "text": "Wie groß ist die Versuchung für dich, Hausübungen oder Aufgaben vom KI-Tutor komplett lösen zu lassen?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Sehr klein",
+        "maxLabel": "Sehr groß"
+      }
+    },
+    "S5.2": {
+      "group": "student",
+      "cluster_id": 5,
+      "cluster_title": "Risiken & Fairness",
+      "text": "Wenn der KI-Tutor manchmal falsch liegt: Würdest du ihn trotzdem nutzen, wenn er meistens gut hilft?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Auf keinen Fall",
+        "maxLabel": "Auf jeden Fall"
+      }
+    },
+    "S5.3": {
+      "group": "student",
+      "cluster_id": 5,
+      "cluster_title": "Risiken & Fairness",
+      "text": "Wie oft würdest du KI-Antworten überprüfen (z.B. in Heft, Buch oder Internet), bevor du sie übernimmst?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Immer",
+        "Meistens",
+        "Manchmal",
+        "Selten",
+        "Nie"
+      ]
+    },
+    "S5.4": {
+      "group": "student",
+      "cluster_id": 5,
+      "cluster_title": "Risiken & Fairness",
+      "text": "Ich empfinde es als unfair, wenn manche Mitschüler:innen KI intensiver nutzen als andere.",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Stimme gar nicht zu",
+        "maxLabel": "Stimme voll zu"
+      }
+    },
+    "S5.5": {
+      "group": "student",
+      "cluster_id": 5,
+      "cluster_title": "Risiken & Fairness",
+      "text": "Ich mache mir Sorgen, dass ich durch KI-Nutzung weniger selbst lerne und zu abhängig werde.",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Stimme gar nicht zu",
+        "maxLabel": "Stimme voll zu"
+      }
+    },
+    "S6.1": {
+      "group": "student",
+      "cluster_id": 6,
+      "cluster_title": "Datenschutz & Vertrauen",
+      "text": "Wie wichtig ist dir, dass du beim KI-Tutor keine persönlichen Daten (Name, Noten, private Infos) eingeben musst?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Unwichtig",
+        "maxLabel": "Sehr wichtig"
+      }
+    },
+    "S6.2": {
+      "group": "student",
+      "cluster_id": 6,
+      "cluster_title": "Datenschutz & Vertrauen",
+      "text": "Was hältst du davon, wenn deine Lehrperson die Chats der Klasse mit dem KI-Tutor mitlesen kann — allerdings ohne zu wissen, welcher Chat von wem stammt?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Finde ich gut, das hilft beim Lernen",
+        "Ist mir egal",
+        "Finde ich unangenehm, auch wenn niemand weiß, dass es mein Chat ist",
+        "Nur wenn ich vorher informiert werde"
+      ]
+    },
+    "S6.3": {
+      "group": "student",
+      "cluster_id": 6,
+      "cluster_title": "Datenschutz & Vertrauen",
+      "text": "Wofür wäre es für dich in Ordnung, wenn deine Lehrperson Chats der Klasse mitlesen kann (ohne zu wissen, von wem sie sind)?",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Um den Unterricht besser an unsere Fragen anzupassen",
+        "Um häufige Missverständnisse zu erkennen",
+        "Um zu sehen, ob der KI-Tutor gut funktioniert",
+        "Für keinen Zweck — meine Chats sollen privat bleiben"
+      ]
+    },
+    "S6.4": {
+      "group": "student",
+      "cluster_id": 6,
+      "cluster_title": "Datenschutz & Vertrauen",
+      "text": "Würdest du dem KI-Tutor mehr vertrauen, wenn er dir zeigt, woher er seine Antworten hat (z.B. aus deinem Schulbuch oder dem Unterrichtsmaterial)?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Ja, Quellenangaben sind mir wichtig",
+        "Wäre nett, aber nicht entscheidend",
+        "Nein, mir reicht eine gute Antwort",
+        "Ich würde die Quellen ohnehin nicht überprüfen"
+      ]
+    },
+    "S7.1": {
+      "group": "student",
+      "cluster_id": 7,
+      "cluster_title": "Abschluss & offene Fragen",
+      "text": "Was wäre für dich ein absolutes No-Go bei einem KI-Tutor?",
+      "type": "freetext",
+      "optional": false
+    },
+    "S7.2": {
+      "group": "student",
+      "cluster_id": 7,
+      "cluster_title": "Abschluss & offene Fragen",
+      "text": "Wo siehst du den größten Mehrwert eines KI-Tutors für dich persönlich?",
+      "type": "freetext",
+      "optional": false
+    },
+    "S7.3": {
+      "group": "student",
+      "cluster_id": 7,
+      "cluster_title": "Abschluss & offene Fragen",
+      "text": "Gibt es sonst noch etwas, das du uns zum Thema KI im Unterricht mitteilen möchtest?",
+      "type": "freetext",
+      "optional": true
+    },
+    "L0.1": {
+      "group": "teacher",
+      "cluster_id": 0,
+      "cluster_title": "Über Sie",
+      "text": "Welche Fächer unterrichten Sie?",
+      "type": "multiple-choice-freetext",
+      "optional": false,
+      "options": [
+        "Angewandte Mathematik",
+        "Programmierunterricht",
+        "Deutsch",
+        "Englisch",
+        "Biologie",
+        "Physik",
+        "Wirtschaft"
+      ]
+    },
+    "L0.2": {
+      "group": "teacher",
+      "cluster_id": 0,
+      "cluster_title": "Über Sie",
+      "text": "Wie lange unterrichten Sie bereits?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Unter 5 Jahre",
+        "5–15 Jahre",
+        "Über 15 Jahre"
+      ]
+    },
+    "L0.3": {
+      "group": "teacher",
+      "cluster_id": 0,
+      "cluster_title": "Über Sie",
+      "text": "Wie sicher fühlen Sie sich im Umgang mit digitalen Lerntools?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Sehr unsicher",
+        "maxLabel": "Sehr sicher"
+      }
+    },
+    "L0.4": {
+      "group": "teacher",
+      "cluster_id": 0,
+      "cluster_title": "Über Sie",
+      "text": "Haben Sie bereits KI-Tools im Unterricht mit Schüler:innen eingesetzt (nicht nur für Vorbereitung)?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Ja, regelmäßig",
+        "Ja, vereinzelt ausprobiert",
+        "Nein, aber ich plane es",
+        "Nein, und ich habe es auch nicht vor"
+      ]
+    },
+    "L1.1": {
+      "group": "teacher",
+      "cluster_id": 1,
+      "cluster_title": "Ihre aktuelle KI-Nutzung",
+      "text": "Welche KI-Tools setzen Sie aktuell im beruflichen Kontext ein (Unterrichtsvorbereitung, Materialerstellung, Verwaltung)?",
+      "type": "multiple-choice-freetext",
+      "optional": false,
+      "options": [
+        "ChatGPT",
+        "Microsoft Copilot",
+        "Google Gemini",
+        "Perplexity",
+        "DeepL",
+        "Spezialtools (z.B. MagicSchool, Diffit)",
+        "Novedu",
+        "Keines"
+      ]
+    },
+    "L1.2": {
+      "group": "teacher",
+      "cluster_id": 1,
+      "cluster_title": "Ihre aktuelle KI-Nutzung",
+      "text": "Wie oft nutzen Sie KI-Tools für Ihre berufliche Tätigkeit?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Täglich",
+        "Mehrmals pro Woche",
+        "Etwa einmal pro Woche",
+        "Seltener",
+        "Nie"
+      ]
+    },
+    "L1.3": {
+      "group": "teacher",
+      "cluster_id": 1,
+      "cluster_title": "Ihre aktuelle KI-Nutzung",
+      "text": "Wofür verwenden Sie KI-Tools hauptsächlich?",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Unterrichtsvorbereitung (Materialien, Arbeitsblätter)",
+        "Aufgaben und Prüfungen erstellen",
+        "Texte verfassen oder korrigieren",
+        "Differenzierung und Individualisierung",
+        "Eigene Weiterbildung",
+        "Verwaltungsaufgaben"
+      ],
+      "maxSelections": 3
+    },
+    "L1.4": {
+      "group": "teacher",
+      "cluster_id": 1,
+      "cluster_title": "Ihre aktuelle KI-Nutzung",
+      "text": "Haben Sie für eines dieser Tools einen bezahlten Account (privat oder schulfinanziert)?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Nein",
+        "Ja, privat finanziert",
+        "Ja, von der Schule bereitgestellt",
+        "Weiß nicht"
+      ]
+    },
+    "L1.5": {
+      "group": "teacher",
+      "cluster_id": 1,
+      "cluster_title": "Ihre aktuelle KI-Nutzung",
+      "text": "Wie schätzen Sie das KI-Nutzungsverhalten Ihrer Schüler:innen ein?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Die meisten nutzen KI regelmäßig",
+        "Einige nutzen KI, die Mehrheit nicht",
+        "Kaum jemand nutzt KI",
+        "Ich kann das nicht einschätzen"
+      ]
+    },
+    "L2.1": {
+      "group": "teacher",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft & Szenarien",
+      "text": "Wenn ein KI-Tutor an Ihrer Schule verfügbar wäre: Wie häufig würden Sie ihn in Ihren Unterricht einbinden?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Regelmäßig (wöchentlich oder häufiger)",
+        "Gelegentlich (ein paar Mal pro Monat)",
+        "Selten (für bestimmte Themen/Projekte)",
+        "Gar nicht"
+      ]
+    },
+    "L2.2": {
+      "group": "teacher",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft & Szenarien",
+      "text": "Für welche Unterrichtsszenarien könnten Sie sich den Einsatz eines KI-Tutors am ehesten vorstellen?",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Hausübungsbegleitung (Schüler:innen arbeiten zu Hause mit dem Tutor)",
+        "Übungsphasen im Unterricht",
+        "Vorbereitung auf Tests und Schularbeiten",
+        "Differenzierung (unterschiedliche Niveaus in einer Klasse)",
+        "Nachhilfe-Ersatz für schwächere Schüler:innen",
+        "Vertiefung für leistungsstarke Schüler:innen"
+      ],
+      "maxSelections": 3
+    },
+    "L2.3": {
+      "group": "teacher",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft & Szenarien",
+      "text": "Wären Sie bereit, eigene Lektionen (Workspaces) für den KI-Tutor zu erstellen — also Unterlagen hochzuladen und Anweisungen für die KI zu formulieren?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Ja, das klingt sinnvoll",
+        "Ja, wenn es einfach und schnell geht (unter 15 Min. pro Lektion)",
+        "Nur wenn fertige Vorlagen vorhanden sind, die ich anpassen kann",
+        "Nein, das ist mir zu aufwendig"
+      ]
+    },
+    "L2.4": {
+      "group": "teacher",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft & Szenarien",
+      "text": "Sollte der KI-Tutor nur zu bestimmten Zeiten verfügbar sein (z.B. während Lernphasen) oder permanent?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Permanent verfügbar",
+        "Nur zu von mir definierten Zeiten",
+        "Nur außerhalb des Unterrichts (zu Hause)",
+        "Keine Meinung"
+      ]
+    },
+    "L2.5": {
+      "group": "teacher",
+      "cluster_id": 2,
+      "cluster_title": "Nutzungsbereitschaft & Szenarien",
+      "text": "Warum würden Sie einen KI-Tutor in Ihrem Fach einsetzen?",
+      "type": "multiple-choice-freetext",
+      "optional": false,
+      "options": [
+        "Entlastung bei Routinefragen der Schüler:innen",
+        "Individuellere Betreuung ermöglichen",
+        "Schüler:innen zum eigenständigen Lernen anregen",
+        "Modernisierung des Unterrichts",
+        "Bessere Vorbereitung der Schüler:innen auf Prüfungen"
+      ],
+      "maxSelections": 3
+    },
+    "L3.1": {
+      "group": "teacher",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Welche 3 Eigenschaften sind Ihnen bei einem KI-Tutor für Ihren Unterricht am wichtigsten?",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Fachliche Korrektheit der Antworten",
+        "Anpassung an meinen Lehrplan und meine Materialien",
+        "Keine Preisgabe von Lösungen an Schüler:innen",
+        "Differenzierung nach Leistungsniveau",
+        "Nachvollziehbare Quellenangaben",
+        "Einfache Erstellung von Workspaces",
+        "Auswertung der Schüler:innen-Nutzung (Lernfortschritt)"
+      ],
+      "maxSelections": 3
+    },
+    "L3.2": {
+      "group": "teacher",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Wie wichtig ist es, dass der KI-Tutor Inhalte am Lehrplan bzw. Ihrer Jahresplanung ausrichtet statt allgemeine Erklärungen zu geben?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Unwichtig",
+        "maxLabel": "Sehr wichtig"
+      }
+    },
+    "L3.3": {
+      "group": "teacher",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Wie soll der KI-Tutor bei Aufgaben helfen, wenn Schüler:innen nicht weiterkommen?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Nur Hinweise, niemals die Lösung",
+        "Schrittweise Hilfe, die Lösung erst nach mehreren Versuchen",
+        "Das soll je nach Workspace einstellbar sein",
+        "Die Schüler:innen sollen selbst wählen können"
+      ]
+    },
+    "L3.4": {
+      "group": "teacher",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Wie sinnvoll fänden Sie KI-Unterstützung beim Debugging direkt im Unterricht (nicht nur zu Hause)?",
+      "type": "likert",
+      "optional": true,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Nicht sinnvoll",
+        "maxLabel": "Sehr sinnvoll"
+      }
+    },
+    "L3.5": {
+      "group": "teacher",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Welche Integrationen mit bestehenden Systemen wären für Sie relevant?",
+      "type": "multiple-choice-freetext",
+      "optional": false,
+      "options": [
+        "Lernplattform/LMS (z.B. Moodle, MS Teams)",
+        "Elektronisches Klassenbuch",
+        "Schulinterne Dateiablage",
+        "Programmierwerkzeuge (z.B. GitHub, IDE-Integration)",
+        "Keine Integration nötig"
+      ]
+    },
+    "L3.6": {
+      "group": "teacher",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Sollte der KI-Tutor Erklärungen auch in vereinfachter Sprache oder in einer anderen Sprache als Deutsch anbieten können?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Ja, das wäre für einige meiner Schüler:innen wichtig",
+        "Wäre ein nettes Extra, aber nicht prioritär",
+        "Nein, der Unterricht findet auf Deutsch statt, der Tutor sollte das auch",
+        "Bin unsicher"
+      ]
+    },
+    "L3.7": {
+      "group": "teacher",
+      "cluster_id": 3,
+      "cluster_title": "Gewünschte Funktionen",
+      "text": "Welche Funktion würden Sie sich bei einem KI-Tutor am meisten wünschen, die es bisher in keinem Tool gibt?",
+      "type": "freetext",
+      "optional": true
+    },
+    "L4.1": {
+      "group": "teacher",
+      "cluster_id": 4,
+      "cluster_title": "Lernwirksamkeit",
+      "text": "Ein KI-Tutor unterstützt Differenzierung im Unterricht sinnvoll (z.B. unterschiedliche Aufgabenniveaus, individuelles Tempo).",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Stimme gar nicht zu",
+        "maxLabel": "Stimme voll zu"
+      }
+    },
+    "L4.2": {
+      "group": "teacher",
+      "cluster_id": 4,
+      "cluster_title": "Lernwirksamkeit",
+      "text": "Ein KI-Tutor stärkt die Problemlösekompetenz der Schüler:innen, statt reines Abschreiben zu fördern.",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Stimme gar nicht zu",
+        "maxLabel": "Stimme voll zu"
+      }
+    },
+    "L4.3": {
+      "group": "teacher",
+      "cluster_id": 4,
+      "cluster_title": "Lernwirksamkeit",
+      "text": "In welchen Bereichen sehen Sie den größten pädagogischen Mehrwert eines KI-Tutors?",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Personalisiertes Lernen (individuelle Lernpfade)",
+        "Entlastung bei Routineerklärungen",
+        "Förderung schwächerer Schüler:innen",
+        "Forderung leistungsstarker Schüler:innen",
+        "Zeitnahe Rückmeldung auf Aufgaben",
+        "Förderung von Medienkompetenz und kritischem Denken"
+      ],
+      "maxSelections": 3
+    },
+    "L4.4": {
+      "group": "teacher",
+      "cluster_id": 4,
+      "cluster_title": "Lernwirksamkeit",
+      "text": "Sollte ein KI-Tutor gelegentlich bewusst Rückfragen stellen oder Denkanstöße geben, statt direkt zu antworten — auch wenn das für Schüler:innen frustrierend sein kann?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Ja, das fördert kritisches Denken",
+        "Ja, aber nur wenn es im Workspace so konfiguriert ist",
+        "Nein, das frustriert die Schüler:innen unnötig",
+        "Bin unsicher"
+      ]
+    },
+    "L5.1": {
+      "group": "teacher",
+      "cluster_id": 5,
+      "cluster_title": "Risiken & Fairness",
+      "text": "Wie hoch schätzen Sie das Risiko ein, dass falsche KI-Antworten bei Schüler:innen zu Fehlvorstellungen führen?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Sehr gering",
+        "maxLabel": "Sehr hoch"
+      }
+    },
+    "L5.2": {
+      "group": "teacher",
+      "cluster_id": 5,
+      "cluster_title": "Risiken & Fairness",
+      "text": "Wenn KI im Unterricht erlaubt ist: Sollten klare, einheitliche Regeln für alle Schüler:innen gelten?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Ja, schulweite Regeln",
+        "Ja, aber jede Lehrperson legt eigene Regeln fest",
+        "Nein, die Schüler:innen sollen eigenverantwortlich entscheiden",
+        "Bin unsicher"
+      ]
+    },
+    "L5.3": {
+      "group": "teacher",
+      "cluster_id": 5,
+      "cluster_title": "Risiken & Fairness",
+      "text": "Welche Art von KI-Unterstützung wäre bei Tests oder Schularbeiten aus Ihrer Sicht akzeptabel?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Keine KI-Nutzung bei Prüfungen",
+        "Nur grundlegende Funktionen wie Rechtschreibprüfung, Übersetzung, etc.",
+        "KI als Hilfsmittel erlaubt, wenn die Aufgabenstellung darauf ausgelegt ist"
+      ]
+    },
+    "L6.1": {
+      "group": "teacher",
+      "cluster_id": 6,
+      "cluster_title": "Datenschutz & Vertrauen",
+      "text": "Wie wichtig wäre Ihnen, dass nachvollziehbar ist, wie Schüler:innen den KI-Tutor genutzt haben (z.B. Verlauf, Häufigkeit, Themen)?",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Unwichtig",
+        "maxLabel": "Sehr wichtig"
+      }
+    },
+    "L6.2": {
+      "group": "teacher",
+      "cluster_id": 6,
+      "cluster_title": "Datenschutz & Vertrauen",
+      "text": "Welche Art von Nutzungsdaten sollten Sie als Lehrperson einsehen können?",
+      "type": "multiple-choice",
+      "optional": false,
+      "options": [
+        "Aggregierte Statistiken (z.B. „70% der Klasse hatten Fragen zu Thema X\")",
+        "Individuelle Nutzungsfrequenz pro Schüler:in (ohne Chatinhalte)",
+        "Anonymisierte Chat-Verläufe",
+        "Individuell zugeordnete Chat-Verläufe",
+        "Keine Einsicht nötig"
+      ]
+    },
+    "L6.3": {
+      "group": "teacher",
+      "cluster_id": 6,
+      "cluster_title": "Datenschutz & Vertrauen",
+      "text": "Welche Datenschutz-Anforderungen sind für Sie zwingend?",
+      "type": "multiple-choice-freetext",
+      "optional": false,
+      "options": [
+        "DSGVO-konforme Datenverarbeitung in der EU",
+        "Keine Weitergabe von Daten an Dritte",
+        "Keine dauerhafte Speicherung von Chat-Verläufen",
+        "Eltern-Informationspflicht bei Nutzung durch Minderjährige",
+        "Regelmäßige Datenlöschung"
+      ]
+    },
+    "L6.4": {
+      "group": "teacher",
+      "cluster_id": 6,
+      "cluster_title": "Datenschutz & Vertrauen",
+      "text": "Wer sollte Ihrer Meinung nach über die Datenschutz-Einstellungen des KI-Tutors entscheiden?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Die Schulleitung zentral",
+        "Jede Lehrperson für ihren eigenen Workspace",
+        "Gemeinsam im Kollegium",
+        "Das sollte gesetzlich vorgegeben sein"
+      ]
+    },
+    "L7.1": {
+      "group": "teacher",
+      "cluster_id": 7,
+      "cluster_title": "Abschluss & offene Fragen",
+      "text": "Ich fühle mich ausreichend vorbereitet, KI-Nutzung bei Schüler:innen pädagogisch zu begleiten.",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Stimme gar nicht zu",
+        "maxLabel": "Stimme voll zu"
+      }
+    },
+    "L7.2": {
+      "group": "teacher",
+      "cluster_id": 7,
+      "cluster_title": "Abschluss & offene Fragen",
+      "text": "Es braucht Fortbildungen für Lehrpersonen zum pädagogischen Einsatz von KI.",
+      "type": "likert",
+      "optional": false,
+      "scale": {
+        "min": 1,
+        "max": 4,
+        "minLabel": "Stimme gar nicht zu",
+        "maxLabel": "Stimme voll zu"
+      }
+    },
+    "L7.3": {
+      "group": "teacher",
+      "cluster_id": 7,
+      "cluster_title": "Abschluss & offene Fragen",
+      "text": "Wie gut kennen Sie die rechtlichen Rahmenbedingungen für KI im Bildungsbereich (z.B. EU AI Act, DSGVO-Anforderungen)?",
+      "type": "single-choice",
+      "optional": false,
+      "options": [
+        "Gut informiert",
+        "Grundlegendes Verständnis",
+        "Habe davon gehört, kenne Details nicht",
+        "Kenne mich damit nicht aus"
+      ]
+    },
+    "L7.4": {
+      "group": "teacher",
+      "cluster_id": 7,
+      "cluster_title": "Abschluss & offene Fragen",
+      "text": "Was wäre für Sie ein absolutes No-Go bei einem KI-Tutor?",
+      "type": "freetext",
+      "optional": false
+    },
+    "L7.5": {
+      "group": "teacher",
+      "cluster_id": 7,
+      "cluster_title": "Abschluss & offene Fragen",
+      "text": "Gibt es sonst noch etwas, das Sie uns zum Thema KI im Unterricht mitteilen möchten?",
+      "type": "freetext",
+      "optional": true
+    }
+  }
+}

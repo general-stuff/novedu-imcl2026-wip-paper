@@ -1,0 +1,21 @@
+# Files needed to build the PDF are NOT ignored:
+#   novedu-wip.tex, references.bib,
+#   llncs.cls, splncs03.bst, aliascnt.sty, remreset.sty
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.run.xml
+*.bcf
+
+# Scratch images and preview renders
+*.png
