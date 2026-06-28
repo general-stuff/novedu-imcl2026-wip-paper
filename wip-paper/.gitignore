@@ -17,5 +17,8 @@
 *.run.xml
 *.bcf
 
+# Exclude PDF as it is attached to GitHub action on successful build
+*.pdf
+
 # Scratch images and preview renders
 *.png
