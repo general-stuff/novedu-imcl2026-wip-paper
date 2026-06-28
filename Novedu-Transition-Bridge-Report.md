@@ -25,7 +25,7 @@ The transition only makes sense once the roles are clear:
   Informatik*) at HTBLA Leonding. He acted as the **main product owner** and the senior
   school stakeholder steering the design work: he guided the students as they turned the
   Open WebUI experience into a feature set and a UX prototype.
-- **Myself, Rainer Stropek — teacher and technical lead.** I set the original project vision
+- **Rainer Stropek — teacher and technical lead.** Stropek set the original project vision
   in October 2025, supervised the cooperative development, and later personally authored the
   MVP seed architecture.
 - **The student team** — Melanie Bauer, Lukas Larndorfer, Konstantin Wetscher, André
@@ -35,8 +35,8 @@ The transition only makes sense once the roles are clear:
   (general-education subjects), *STEAM*, and *Computer Science*. They were the evaluators at
   the decisive May 26 presentation.
 
-The recurring pattern across the whole project: **stakeholders set direction (I provided the
-vision, Bauer the product), students do the building.**
+The recurring pattern across the whole project: **stakeholders set direction (Stropek provided
+the vision, Bauer the product), students do the building.**
 
 ---
 
@@ -70,7 +70,7 @@ This is the high-water mark of *scope*: the click-dummy shows the maximal vision
 a complete institutional platform.
 
 **Running underneath all of this — the school-wide survey.** In parallel (designed from
-2026-03, fielded 2026-04-16 → 05-12, analyzed 2026-05-27), a teacher colleague and I ran a
+2026-03, fielded 2026-04-16 → 05-12, analyzed 2026-05-27), a teacher colleague and Stropek ran a
 299-respondent student/teacher survey to ground the requirements in evidence. Its findings,
 curricular grounding as the #1 wish, configurable pedagogy modes, factual correctness as the
 shared red line, and privacy-as-aggregated-insight, both validated the configurable-tutor
@@ -89,7 +89,7 @@ click-dummy was ever touched**, with a tight morning burst of finishing commits 
 and a final cleanup at 16:02, after which the prototype was frozen for good.
 
 ### Move 4 — The decision: cut scope to a classroom-ready MVP (late May → early Jun 2026)
-The panel's feedback set the next task for me and the students together:
+The panel's feedback set the next task for Stropek and the students together:
 **boil the broad prototype down to a minimal viable product** that could be **used in real
 classroom experiments much faster.** The guiding question shifted from "what should the full
 platform contain?" to "what is the smallest thing a teacher can actually put in front of a
@@ -100,7 +100,7 @@ tutor, delivered as a chat, that a student can open and use**, with everything i
 (admin, budgets, dashboards, provider management) deferred.
 
 ### Move 5 — The MVP seed and handover (2026-06-08 → 2026-06-10)
-I translated that reduced scope into a new architecture in a **workshop with the
+Stropek translated that reduced scope into a new architecture in a **workshop with the
 students on 8 June 2026**, then hardened it over the next two days and **handed the code to
 the students on 10 June** to continue. The MVP is a clean-slate rewrite, neither Open WebUI
 nor the click-dummy's codebase, built on Next.js + Mastra + CoPilotKit + AG-UI, with the
@@ -157,15 +157,15 @@ teacher-configurable platform. The causal spine has four parts:
 
 | Date | Move | Event |
 |---|---|---|
-| 2025-10-06/07 | — | I author the project vision |
+| 2025-10-06/07 | — | Stropek authors the project vision |
 | 2025-12 → 2026-02 | Move 1 | Open WebUI + LiteLLM experiment in real use |
 | 2026-01-27 | Move 2 | Requirements specification (*Anforderungsbeschreibung*) finalized |
 | 2026-02-07 → 05-10 | Move 2 | ERD / data-model design (issue #28) |
 | 2026-02-22 → 05-26 | Move 2 | UX click-dummy built (React/Vite/shadcn, issue #29), guided by product owner Peter Bauer |
 | 2026-05-26 | Move 3 | Students present the prototype to the *Allgemeinbildung / STEAM / CS* teacher panel — well received, scope judged too large |
-| late May → early Jun | Move 4 | Decision (myself + students): cut to a classroom-ready MVP |
-| 2026-06-08 | Move 5 | MVP architecture worked out in a workshop (myself + students) |
-| 2026-06-10 | Move 5 | I hand the MVP seed to the students; they continue |
+| late May → early Jun | Move 4 | Decision (Stropek + students): cut to a classroom-ready MVP |
+| 2026-06-08 | Move 5 | MVP architecture worked out in a workshop (Stropek + students) |
+| 2026-06-10 | Move 5 | Stropek hands the MVP seed to the students; they continue |
 
 ---
 
@@ -174,6 +174,6 @@ teacher-configurable platform. The causal spine has four parts:
 Some details deserve a word on provenance. Peter Bauer's title is rendered here as "Head of
 the Computer Science Department" for *Abteilungsvorstand für Informatik*. The May 26
 presentation and Mr. Bauer's product-owner role are external events not recorded in the
-repository; I describe them from my own account rather than from any commit. The MVP's
+repository; Stropek describes them from his own account rather than from any commit. The MVP's
 current status beyond the 2026-06-10 seed is the subject of a forthcoming discussion and is
 intentionally not detailed here.

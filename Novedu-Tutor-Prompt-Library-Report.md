@@ -9,9 +9,9 @@ writing holds 34 commits spanning 2025-12-15 to 2026-06-14, contributed by a gro
 It is important to be honest about the state of this work: it is **explicitly unfinished.** The
 build script (`build.py`) is not yet implemented, structure and conventions are still in flux,
 and the content is a mix of polished and draft prompts. In our project this is the content
-layer, and I see the library less as a finished artefact than as a visible record of teachers
-from different fields collaborating to design AI tutors for general-education subjects
-(*Allgemeinbildung*).
+layer, and Rainer Stropek sees the library less as a finished artefact than as a visible record
+of teachers from different fields collaborating to design AI tutors for general-education
+subjects (*Allgemeinbildung*).
 
 This document is a companion to the other materials accompanying the paper: the repository
 history, the chat MVP seed, the Open WebUI to MVP transition, the teacher survey, the
@@ -103,8 +103,8 @@ whether they work.
 
 ## 4. Authorship — Genuinely Cross-Disciplinary, Teacher-Driven
 
-Unlike the other repositories in the project, where I usually hold most of the commit history,
-this one is committed by a **broad group of teachers**, which is precisely its point: it
+Unlike the other repositories in the project, where Stropek usually holds most of the commit
+history, this one is committed by a **broad group of teachers**, which is precisely its point: it
 documents collaboration, not a single author. Contributors and their subjects:
 
 | Contributor | Commits | Subject area (Allgemeinbildung & more) |
@@ -120,9 +120,9 @@ documents collaboration, not a single author. Contributors and their subjects:
 
 This spread, covering German, English, Mathematics, Biomedicine, and Programming, matches the
 same cross-disciplinary make-up as our survey design panel and the May 26 review, and it is led
-by the product owner, **Peter Bauer**, who initiated this repository on 2025-12-15. I see this as
-the clearest single artefact showing that Novedu's pedagogy is being shaped by **teachers across
-faculties**, not just the CS and development team.
+by the product owner, **Peter Bauer**, who initiated this repository on 2025-12-15. Stropek sees
+this as the clearest single artefact showing that Novedu's pedagogy is being shaped by **teachers
+across faculties**, not just the CS and development team.
 
 ---
 

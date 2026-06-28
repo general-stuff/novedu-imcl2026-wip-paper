@@ -1,13 +1,13 @@
 # How the Cited Literature Relates to the Novedu Work
 
-This document explains how the four works I cite in the structured abstract *"From Generic
+This document explains how the four works Rainer Stropek cites in the structured abstract *"From Generic
 Chatbots to Teacher-Configurable AI Tutors: The Design and Evaluation of Novedu in Secondary
 Education"* (IMCL) relate to Novedu. It is a positioning piece: it sets out where Novedu agrees
 with the literature, where we deliberately take a different route, and where the literature
 predicts or corroborates our own findings. The quantitative figures throughout come from our
 school survey, reported in full in the companion results document (n = 318: 284 students, 34
-teachers; 4-point Likert, no neutral midpoint, theoretical mean 2.5). For each cited paper I
-split the survey evidence into where the data confirm the paper, where they complicate it, and
+teachers; 4-point Likert, no neutral midpoint, theoretical mean 2.5). For each cited paper Stropek
+splits the survey evidence into where the data confirm the paper, where they complicate it, and
 what the survey shows that the paper does not address.
 
 ---
@@ -32,7 +32,7 @@ A useful axis for reading all four against Novedu:
 Novedu sits firmly on the prompt/configuration side. Its core mechanism is a
 teacher-authored, reusable prompt/text module assembled into a system prompt (the YAML tutor
 plus fragment model). We treat pedagogical alignment as a *configuration and authoring* problem
-owned by teachers, not a model-training problem owned by ML engineers. I use the citations to
+owned by teachers, not a model-training problem owned by ML engineers. Stropek uses the citations to
 justify *why* alignment matters; Novedu's contribution is an *institutional,
 teacher-configurable delivery* of it. This is the single most important relationship discussed
 here.
@@ -264,10 +264,10 @@ by the research team than by students.
 
 ## 5. Notes & Caveats
 
-- My summaries are based on the papers' abstracts and HTML as fetched on 2026-06-28; for direct
-  quotation I verify exact wording and page numbers against the published PDFs.
-- The "training versus configuration" framing is my own analytical lens, not the papers' own
-  terminology. It is useful for positioning Novedu, but I present it as my framing rather than
+- Stropek's summaries are based on the papers' abstracts and HTML as fetched on 2026-06-28; for direct
+  quotation he verifies exact wording and page numbers against the published PDFs.
+- The "training versus configuration" framing is Stropek's own analytical lens, not the papers' own
+  terminology. It is useful for positioning Novedu, but he presents it as his framing rather than
   theirs.
 - Novedu commits to open-source, privacy-compliant, European and self-hostable components and
   teacher-configured tutors; none of the four papers share that sovereignty/institutional

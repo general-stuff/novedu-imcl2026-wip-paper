@@ -8,7 +8,7 @@ answers are German; key quotes are translated inline.
 This document presents the empirical results of the school-wide survey. It is the detailed
 results counterpart to the companion document describing the instrument
 (`Novedu-Survey-Report.md`), which set out the questionnaire design and the earlier 2026-05-27
-analysis. Here I analyse the full, later export (`n = 318`).
+analysis. Here Rainer Stropek analyses the full, later export (`n = 318`).
 
 > **Scale convention (read before any mean).** All Likert items use a **4-point scale with no
 > neutral midpoint** (theoretical mean = 2.5). There is no "5". Scale *direction differs per
@@ -126,7 +126,7 @@ Per-item response rates show a mild, monotonic drop-off from the first cluster (
 last substantive free-text items (~94 % for students, ~97 % for teachers), consistent with
 incremental saving and modest fatigue. **Optional items** show the expected sharp fall:
 student S3.6 (37 %), S7.3 (24 %); teacher L3.4 (79 %), L3.7 (18 %), L7.5 (21 %). Absence of a
-question key denotes *not answered*, not an empty answer, so I report per-question `n`
+question key denotes *not answered*, not an empty answer, so Stropek reports per-question `n`
 throughout rather than assuming a constant denominator.
 
 ### 3.3 Field timeline
@@ -165,15 +165,15 @@ are in the companion instrument document.
 
 ### 4.1 Method of this analysis
 
-This is a descriptive-statistics analysis that I computed for every item directly from
+This is a descriptive-statistics analysis that Stropek computed for every item directly from
 `responses.json`: Likert mean/SD/median and the full 1–4 distribution; frequency counts and
 percentages (of respondents to that item) for choice items; selection counts and mean
 selections for multiple-choice; and verbatim collection plus keyword-based thematic coding for
 free-text. For multiple-choice, percentages sum to >100 % because respondents pick several
-options. I ran **targeted inferential tests** (Pearson correlations between Likert items, with
+options. He ran **targeted inferential tests** (Pearson correlations between Likert items, with
 t-statistics; subgroup mean comparisons by branch/grade) only where a substantive hypothesis or
-apparent contradiction warranted it; given the 4-point ordinal scale, I interpret correlations
-as indicative monotonic association, not as interval-scale effect sizes. **I report no
+apparent contradiction warranted it; given the 4-point ordinal scale, he interprets correlations
+as indicative monotonic association, not as interval-scale effect sizes. **Stropek reports no
 significance testing for the teacher group beyond description**: at n ≈ 33, each respondent is
 ~3 percentage points and tests are underpowered.
 
@@ -477,7 +477,7 @@ preparedness gap.
 
 ## 8. Critique of the Questionnaire
 
-The following is my own honest appraisal of the instrument. It is constructive: the survey is
+The following is Rainer Stropek's own honest appraisal of the instrument. It is constructive: the survey is
 well-designed for its purpose, but several limitations bound the conclusions.
 
 1. **Sample bias dominates external validity.** 72.9 % informatics students and 56 %

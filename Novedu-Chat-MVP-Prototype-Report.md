@@ -4,7 +4,7 @@
 **Reference commit:** `82615f9` ("Migrate mathematics tutor files from prompt-database to new format", 2026-06-10), the point in time described throughout this document.
 **Also present as:** `melanie-bauer/Novedu`, branch `feat/chat-window`.
 
-This document describes the seed repository I built for the new-architecture Novedu MVP. It is a companion to the document on the full `melanie-bauer/Novedu` history, which covers what that document calls "Phase 5b, the MVP harness." This prototype is the seed of that phase. For the decision history that explains why this MVP exists at all (the Open WebUI experiment, the stakeholder-governed design phase under product owner Peter Bauer, the 2026-05-26 teacher-panel presentation, and the resulting "scope is too large, cut to an MVP" verdict), see the companion document on the transition between the two architectures. The present document explains where the current architecture came from; the transition document explains why it was scoped the way it was.
+This document describes the seed repository Rainer Stropek built for the new-architecture Novedu MVP. It is a companion to the document on the full `melanie-bauer/Novedu` history, which covers what that document calls "Phase 5b, the MVP harness." This prototype is the seed of that phase. For the decision history that explains why this MVP exists at all (the Open WebUI experiment, the stakeholder-governed design phase under product owner Peter Bauer, the 2026-05-26 teacher-panel presentation, and the resulting "scope is too large, cut to an MVP" verdict), see the companion document on the transition between the two architectures. The present document explains where the current architecture came from; the transition document explains why it was scoped the way it was.
 
 **Why this MVP was deliberately small.** This is not a from-scratch reimagining of the whole vision, it is a scope-reduced one. On 2026-05-26 the students presented a full UX prototype (the click-dummy from the design phase) to a diverse teacher panel. It was well received but judged too broad. The task that produced this repository was explicitly to boil that vision down to a minimum viable product that could be used in classroom experiments much faster. That framing explains the feature choices below: a working teacher-configurable tutor chat, and almost nothing institutional (no admin console, budgets, or dashboards). Those were intentionally deferred, not forgotten.
 
@@ -18,23 +18,23 @@ The defining facts:
 
 - It is a **complete, from-scratch rewrite**: not Open WebUI, not the earlier React/Vite click-through prototype from the design phase, but a real full-stack Next.js application with working chat, auth, and a modular tutor system.
 - It establishes the **architecture the live Novedu MVP now runs on** (Next.js + Mastra + CoPilotKit + AG-UI + YAML tutors + Microsoft Entra ID).
-- I initiated it, and the students continued it. See §2.
+- Rainer Stropek initiated it, and the students continued it. See §2.
 
 ---
 
-## 2. Authorship and Timeline: I Initiate, Students Continue
+## 2. Authorship and Timeline: Stropek Initiates, Students Continue
 
 This is the cleanest illustration in the whole project of the teacher-initiator / student-builder division that runs throughout Novedu.
 
-I authored every one of the **26 commits** in this repository (2026-06-08 to 2026-06-10), committing under `rainer@software-architects.at` and `rainer@timecockpit.com`. There are no student commits in this seed repository.
+Rainer Stropek authored every one of the **26 commits** in this repository (2026-06-08 to 2026-06-10), committing under `rainer@software-architects.at` and `rainer@timecockpit.com`. There are no student commits in this seed repository.
 
 The timeline was:
 
-- **2026-06-08, workshop.** We worked out the prototype in a workshop I ran with the students. The commits of this day lay the foundation: app skeleton, the chat feature, the Markdown/KaTeX renderer, the first sample tutors, and the tutor validation/building system.
-- **2026-06-09 to 2026-06-10, hardening the seed.** I added Microsoft Entra ID authentication and session management, teacher-role resolution, navigation/status-bar UI, student mode, the share-link feature, Docker packaging, a Docker Hub publish workflow, Azure App Service deployment, and a teacher-only `/health` page. The final reference commit (`82615f9`) migrates the mathematics tutor files into the new format.
-- **2026-06-10, handover.** I gave the students the code, and they started working on it. From here the story continues in `melanie-bauer/Novedu` (Phase 5b, where student commits begin 2026-06-11 and the folder is later renamed to `application/`).
+- **2026-06-08, workshop.** We worked out the prototype in a workshop Stropek ran with the students. The commits of this day lay the foundation: app skeleton, the chat feature, the Markdown/KaTeX renderer, the first sample tutors, and the tutor validation/building system.
+- **2026-06-09 to 2026-06-10, hardening the seed.** Stropek added Microsoft Entra ID authentication and session management, teacher-role resolution, navigation/status-bar UI, student mode, the share-link feature, Docker packaging, a Docker Hub publish workflow, Azure App Service deployment, and a teacher-only `/health` page. The final reference commit (`82615f9`) migrates the mathematics tutor files into the new format.
+- **2026-06-10, handover.** Stropek gave the students the code, and they started working on it. From here the story continues in `melanie-bauer/Novedu` (Phase 5b, where student commits begin 2026-06-11 and the folder is later renamed to `application/`).
 
-So the overall sequence is: I set the vision (Oct 2025), the students built the click-through prototype and ran the design phase, I single-handedly built the new-architecture seed in a workshop (this repo, 2026-06-08 to 06-10), and the students then took over and continued it (Phase 5b onward).
+So the overall sequence is: Stropek set the vision (Oct 2025), the students built the click-through prototype and ran the design phase, he single-handedly built the new-architecture seed in a workshop (this repo, 2026-06-08 to 06-10), and the students then took over and continued it (Phase 5b onward).
 
 ---
 
@@ -99,7 +99,7 @@ Like the later MVP harness, this repo is built to be worked on by AI coding agen
 | 2026-06-08 | Workshop (teacher + students). Skeleton, chat feature, Markdown/KaTeX renderer, first sample tutors, tutor validation/assembly system. |
 | 2026-06-09 | Mastra `tutor` agent integration; Microsoft Entra ID auth + session management. |
 | 2026-06-10 | Teacher role resolution; navigation/status bar; student mode; share-link feature; Docker packaging + Docker Hub publish; Azure App Service deploy (Austria East); teacher-only `/health` page; mathematics tutors migrated to new format (commit `82615f9`). |
-| 2026-06-10 | **Handover:** I give the students the code; they begin continuing it (student commits from 2026-06-11). |
+| 2026-06-10 | **Handover:** Stropek gives the students the code; they begin continuing it (student commits from 2026-06-11). |
 
 ---
 

@@ -2,11 +2,11 @@
 
 SocraticTutorEval (Python package **SocraticTutorEval**, `socratic-tutor-eval` CLI, school-internal 
 GitHub repository https://github.com/general-stuff/prompt-model-eval) is the
-evaluation harness I built to score tutor system prompts and models for Socratic behaviour. I
+evaluation harness Rainer Stropek built to score tutor system prompts and models for Socratic behaviour. He
 authored all 12 commits in its repository between 2026-04-30 and 2026-06-08. It is the foundation
-of our evaluation effort and currently carries only a few test scenarios; I designed it to become
-the basis for a structured analysis carried out by multiple teachers over the coming months. I
-have shared the approach with the involved teachers, and first experiments across the group have
+of our evaluation effort and currently carries only a few test scenarios; Stropek designed it to become
+the basis for a structured analysis carried out by multiple teachers over the coming months. He
+has shared the approach with the involved teachers, and first experiments across the group have
 begun.
 
 The harness is the evaluation sub-project of Novedu. Where the survey and the literature review
@@ -19,7 +19,7 @@ models and which system prompts make Novedu's tutors actually behave Socraticall
 
 SocraticTutorEval is a standalone evaluation harness for Socratic tutor system prompts. Given a
 partial student-tutor conversation that ends on a student turn, it generates the next tutor reply
-with several LLMs and has an LLM judge score each reply against a per-scenario rubric. I designed
+with several LLMs and has an LLM judge score each reply against a per-scenario rubric. Stropek designed
 it to answer two questions that are decisive for a platform like Novedu that relies on in-region,
 open-weight inference rather than a commercial cloud LLM, both rooted in our cost and privacy
 constraints:
@@ -103,7 +103,7 @@ identical scenarios. The result that needs careful interpretation is that fronti
 score lower because they are weaker. They are more capable, and that capability works against them
 here, because their characteristic failure mode is over-responding: when in doubt, a strong model
 tends to volunteer the full, correct solution, which is exactly the behaviour the Socratic rubric
-penalizes. In practice I found it easier to steer a small model into Socratic behaviour than to
+penalizes. In practice Stropek found it easier to steer a small model into Socratic behaviour than to
 restrain a large one from over-helping. So the comparison is not "smaller models are simply as
 good". It is a measure of how reliably a given model can be held to the teacher-specified stance,
 and it tells us which models we can realistically host while keeping the intended tutoring
@@ -151,7 +151,7 @@ a quality-control step for teacher-authored test data.
 | 2026-06-08 | Promptfoo evals skill + cheatsheet; refined evaluation criteria & goal-alignment warnings | The day of the MVP architecture workshop |
 | 2026-06 → coming months | Rolled out to the teacher group; first cross-teacher experiments started; structured analysis to follow | Parallel to ongoing MVP feature development |
 
-The interlock matters: I started the evaluation harness during the requirements and design phase,
+The interlock matters: Rainer Stropek started the evaluation harness during the requirements and design phase,
 alongside the survey, matured it on the same day the MVP was seeded, and now run it in parallel
 with platform development. The project therefore has a feedback loop between what tutors should do
 (the survey), how to build them (the MVP), and whether a given model and prompt actually does it

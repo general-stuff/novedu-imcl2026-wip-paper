@@ -25,7 +25,7 @@ decision history; the present document is the reference for the repository facts
 
 Novedu is a teacher-configurable AI-tutoring platform developed at **HTBLA Leonding**
 (Austria) as a cooperative software-engineering project. 4th-grade students build it as a
-study project under my guidance as their teacher. The goal is to move a school from ad-hoc
+study project under the guidance of Rainer Stropek, their teacher. The goal is to move a school from ad-hoc
 use of generic chatbots (ChatGPT, Claude) toward an institutionally embedded platform where
 teachers assemble subject-specific tutors that align with their instruction, while preserving
 privacy, budget control, and oversight.
@@ -117,7 +117,7 @@ project's **main product owner, Peter Bauer, Head of the Computer Science Depart
   It was **well received, but the scope was judged too large.** This triggered the project's
   pivotal decision, to cut scope to a classroom-ready MVP (see Phase 5b and the transition
   document). The presentation and the product-owner role are not recorded in the repository;
-  they are documented here from my own recollection.
+  they are documented here from Stropek's own recollection.
 
 ### Phase 5a — Deployment migration: Azure → in-school Proxmox (2026-04-07 → 2026-04-24)
 A significant operational shift. Commits "update files based on proxmox deployment" and
@@ -130,7 +130,7 @@ deployment target.
 ### Phase 5b — The MVP harness: agent-driven full rebuild (2026-06-06 → 2026-06-15)
 The most consequential recent change, and a **direct response to the 2026-05-26 panel
 verdict** that the designed platform was too large in scope. Tasked with boiling the vision
-down to a minimal viable product usable in real classroom experiments much faster, I first
+down to a minimal viable product usable in real classroom experiments much faster, Rainer Stropek first
 built a clean-slate MVP seed (in a 2026-06-08 workshop with the students; see the companion
 document on the MVP seed) and handed it to the students on 2026-06-10. They then re-founded
 the custom application as a **Next.js full-stack MVP** built through an **agent-driven
@@ -171,18 +171,18 @@ all branches there are **8 distinct author identities**, which consolidate into 
 (~252 commits counted across all branches; student email addresses use the
 `@students.htl-leonding.ac.at` domain.)
 
-The four students account for roughly **98% of all commits**; I contributed about **2%** as
+The four students account for roughly **98% of all commits**; Rainer Stropek contributed about **2%** as
 the supervising teacher, and those few commits are largely coordination-level (e.g. enabling
 a CI `workflow_dispatch` trigger, config tweaks) rather than feature work. In other words, the
-architecture, prototype, and MVP were designed and implemented by students, with me acting as
+architecture, prototype, and MVP were designed and implemented by students, with Stropek acting as
 guide and project lead. This supports the framing of Novedu as a **cooperative
 software-engineering project carried out by students**.
 
-**One notable exception — the vision came from me, the teacher.** I authored the original
-project vision document (`docs/vision/project_vision.md`) entirely myself (first draft
-2025-10-06, expanded 2025-10-07; all three authoring commits are mine). The only later change
+**One notable exception — the vision came from Stropek, the teacher.** He authored the original
+project vision document (`docs/vision/project_vision.md`) entirely himself (first draft
+2025-10-06, expanded 2025-10-07; all three authoring commits are his). The only later change
 to the file was a folder restructure by a student (Lukas Larndorfer, 2026-02-03), which moved
-but did not rewrite it. This is a clean division of labour: I **set the vision and goals**, and
+but did not rewrite it. This is a clean division of labour: Stropek **set the vision and goals**, and
 the **students designed and built the system** that realizes them.
 
 ---

@@ -2,7 +2,7 @@
 
 **Repository:** https://github.com/Teaching-HTL-Leonding/novedu-chat-mvp
 
-This document describes the current state of the Novedu MVP as of 2026-06-28. It is the lead/reference implementation I built and maintain; I authored all 115 commits in this repository. A companion document covers the seed version handed over on 2026-06-10, and a separate student continuation line (the `application/` folder in `melanie-bauer/Novedu`) is described in its own companion documents. The codebase ~18 days and ~90 commits later than the seed is the subject of this report. Development is PR-based, with CODEOWNERS-enforced review and a Docker-building CI/CD pipeline, and is agent-driven (an `AGENTS.md` router plus `.agents/skills`).
+This document describes the current state of the Novedu MVP as of 2026-06-28. It is the lead/reference implementation that Rainer Stropek built and maintains; he authored all 115 commits in this repository. A companion document covers the seed version handed over on 2026-06-10, and a separate student continuation line (the `application/` folder in `melanie-bauer/Novedu`) is described in its own companion documents. The codebase ~18 days and ~90 commits later than the seed is the subject of this report. Development is PR-based, with CODEOWNERS-enforced review and a Docker-building CI/CD pipeline, and is agent-driven (an `AGENTS.md` router plus `.agents/skills`).
 
 ---
 
@@ -79,12 +79,12 @@ The next activity under development extends Novedu beyond the browser chat into 
 
 ## 7. Limitations (it is still a learning prototype)
 
-I want to state these plainly. The value here is the approach and the learning, not a finished product:
+Stropek wants to state these plainly. The value here is the approach and the learning, not a finished product:
 
 - **Unpolished UI.** The interface is functional, not designed; usability and visual polish are not yet a focus.
 - **Not smartphone-ready.** The app is desktop-oriented and **not yet usable on phones**, a real gap since smartphones are a primary platform for students.
 - **Single-tenant, Leonding-only.** It is built for **HTBLA Leonding specifically**; there is **no multi-tenancy and no large-scale configurability** (e.g. per-school provisioning, org-level administration). Configuration is by editing YAML and environment, not through an admin console.
-- **Still a prototype for learning.** This is an authentic software-engineering learning vehicle and an experimental classroom tool, not a production platform. Several institutional features I envisioned in the design phase (admin dashboards, budgets, user/group management) remain deliberately out of scope.
+- **Still a prototype for learning.** This is an authentic software-engineering learning vehicle and an experimental classroom tool, not a production platform. Several institutional features Stropek envisioned in the design phase (admin dashboards, budgets, user/group management) remain deliberately out of scope.
 
 ---
 

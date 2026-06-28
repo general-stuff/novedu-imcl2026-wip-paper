@@ -22,7 +22,7 @@ The repository contains four things:
 
 ## 2. Authorship: A Cross-Disciplinary Teacher Panel
 
-The survey is a teacher-led workstream, distinct from the student-built platform development. The questionnaire was not authored by one person but designed by a diverse panel of teachers across the same three faculties later represented at the May 26 review: general-education subjects (*Allgemeinbildung*), STEAM, and Computer Science. The panel included me, Andreas Probst, and Peter Bauer (the project's product owner and Head of the Computer Science Department). We worked out the questions together over several collaborative design sessions. The cross-disciplinary make-up was deliberate, so the instrument would be meaningful beyond just computer-science classes.
+The survey is a teacher-led workstream, distinct from the student-built platform development. The questionnaire was not authored by one person but designed by a diverse panel of teachers across the same three faculties later represented at the May 26 review: general-education subjects (*Allgemeinbildung*), STEAM, and Computer Science. The panel included Rainer Stropek, Andreas Probst, and Peter Bauer (the project's product owner and Head of the Computer Science Department). We worked out the questions together over several collaborative design sessions. The cross-disciplinary make-up was deliberate, so the instrument would be meaningful beyond just computer-science classes.
 
 The git committers are not the full author list. The version history records only the two people who edited files directly; the broader panel's input arrived through the design sessions and informal collection (see §3) rather than as commits. The recorded commits run 2026-03-05 → 2026-05-26:
 
@@ -35,7 +35,7 @@ Peter Bauer and other panel members contributed through the design sessions, not
 
 Where this sits relative to the rest of the project:
 
-- **2026-03-05** — I committed the questionnaire draft and a first survey-app prototype. This fell during the custom-platform design phase and overlapped the late Open WebUI prototype era.
+- **2026-03-05** — Stropek committed the questionnaire draft and a first survey-app prototype. This fell during the custom-platform design phase and overlapped the late Open WebUI prototype era.
 - **2026-03-08** — Andreas Probst refined cluster wording, a second teacher's input.
 - **2026-03-23** — Major questionnaire revision: Likert scales were unified to a 4-point format (no neutral midpoint, which is important for interpreting every mean later), professional-context options were reworked, and "Novedu" was added to the tools list in the teacher questionnaire, so the survey itself name-checks the platform being built.
 - **2026-04-16 → 2026-05-12** — Field period: responses collected, largely in supervised in-class sessions (about 60 % of answers fell on four days: 04–06 May and 12 May).
@@ -53,8 +53,8 @@ The survey is itself a small case study of the project's modern, AI-assisted way
 1. **Informal collection.** We gathered rough questions informally across the teacher panel via Excel and email (the repo still carries `FragebogenFunktionalität.xlsx`, an early functionality/question spreadsheet, from 2026-03-05). No tooling yet, just capturing ideas from every faculty.
 2. **AI-assisted phrasing into Markdown.** Those rough inputs were turned into precise question wording with AI support, targeting a structured Markdown representation: the per-cluster files (`0X_cluster_*.md`) that document each question's exact wording, answer type, options, and internal rationale. Markdown is the human-readable source of truth.
 3. **Manual rework.** We manually refined the Markdown until the questions were right (for example, the 2026-03-23 revision unifying Likert scales to 4 points, reworking option sets, and resolving redundancies). Humans stay in control of the content; AI accelerates but does not decide.
-4. **Harness engineering ("vibe coding"): Markdown becomes a website.** Rather than feeding the questions into an off-the-shelf survey tool, I turned the Markdown into a custom questionnaire website (built with AI coding agents) that renders the questions, gates access behind school SSO, persists answers, and ships built-in results (charts and tables; see the `recharts` dashboard and the `.analysis/` pipeline). The Markdown is, in effect, made executable.
-5. **Iterative fine-tuning with a coding agent.** As the panel kept refining questions, I regenerated and updated the website with the coding agent to match, across multiple iterations where a change to the Markdown intent propagated into the live app, keeping source and instrument in sync.
+4. **Harness engineering ("vibe coding"): Markdown becomes a website.** Rather than feeding the questions into an off-the-shelf survey tool, Stropek turned the Markdown into a custom questionnaire website (built with AI coding agents) that renders the questions, gates access behind school SSO, persists answers, and ships built-in results (charts and tables; see the `recharts` dashboard and the `.analysis/` pipeline). The Markdown is, in effect, made executable.
+5. **Iterative fine-tuning with a coding agent.** As the panel kept refining questions, Stropek regenerated and updated the website with the coding agent to match, across multiple iterations where a change to the Markdown intent propagated into the live app, keeping source and instrument in sync.
 
 The core idea is "executable Markdown." The questionnaire's canonical form is a set of human-authored Markdown files; the running website is a generated artifact over that source. This yields three concrete advantages:
 
@@ -62,7 +62,7 @@ The core idea is "executable Markdown." The questionnaire's canonical form is a 
 - **No dependency on an external SaaS:** the school owns the app, the data, and the hosting (a recurring requirement throughout the project: privacy, European/self-hostable).
 - **Authentication integrated into the school's identity/SSO** (Microsoft Entra ID), so responses are tied to authenticated students and teachers and routed to the right variant, with no third-party accounts.
 
-This is the same build philosophy and roughly the same stack I used days later for the chat-MVP seed: AI-assisted, harness-driven engineering producing a self-hosted, SSO-gated Next.js app, making the survey both a requirements instrument and a methodological dry run for the MVP.
+This is the same build philosophy and roughly the same stack Stropek used days later for the chat-MVP seed: AI-assisted, harness-driven engineering producing a self-hosted, SSO-gated Next.js app, making the survey both a requirements instrument and a methodological dry run for the MVP.
 
 ---
 
@@ -87,7 +87,7 @@ Design choices documented in `00_einleitung.md`: about 35 questions per variant 
 
 ## 5. Survey App Architecture
 
-A small, purpose-built Next.js app, built on the same stack I later used for the chat-MVP seed, which makes the survey app an architectural precursor:
+A small, purpose-built Next.js app, built on the same stack Stropek later used for the chat-MVP seed, which makes the survey app an architectural precursor:
 
 - **Next.js 16** (App Router), **React 19**, TypeScript, Tailwind 4.
 - **Auth.js / NextAuth v5 (beta)** with **Microsoft Entra ID** sign-in (`auth.ts` + `proxy.ts`, the same Next-16 `proxy` middleware convention as the chat-MVP). Role (`is_teacher`) and class are derived from the signed-in identity, which routes each user to the student or teacher variant.
