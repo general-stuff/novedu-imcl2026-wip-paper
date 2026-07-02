@@ -128,3 +128,59 @@ These are directions for a later paper, not changes to this one.
 ---
 
 *Note: anything marked **[uncertain]** will be checked with Andreas directly.*
+
+---
+
+# Response to "mehr Quellen": RAG, prompt fragments, and grep-based retrieval
+
+(Added by Rainer, research for papers with AI support)
+
+Andreas, on the "mehr Quellen" note, here's a concrete place to add citations that
+also strengthens the paper. It lines up with what we already call the "most
+important gap": students want the tutor to know their concrete lesson material,
+and the MVP only supplies that through teacher-authored prompt fragments, not
+retrieval over the LMS. There's a real architecture story behind that gap, and
+telling it brings the references in naturally.
+
+The story is the v1 -> v2 shift. Novedu v1 (the Open WebUI prototype) leaned
+heavily on RAG to pull curriculum material into the tutor. Novedu v2 (the coded
+MVP) deliberately dropped RAG and instead builds on modular, teacher-authored
+prompt fragments, so curriculum context lives in the fragments rather than in a
+retrieval pipeline. The future-work angle is then to evaluate whether a
+prompt-based approach, maybe extended with a lightweight tool-based grep step over
+curriculum material, gives meaningful, grounded responses, and whether that holds
+up against a full RAG pipeline in our setting.
+
+I think this is worth doing. It explains the v1 -> v2 shift as a deliberate design
+decision rather than an accident, and it frames the retrieval gap more honestly
+than "we should add RAG": the literature is genuinely split on whether RAG is the
+right lever once context windows are large and cheaper retrieval (keyword/grep,
+agentic search) is on the table, so putting Novedu inside that open question is
+defensible for a WIP. Two things to watch: it needs to stay tight given the page
+budget (a short paragraph in the design/history section plus a few sentences in
+Next Steps, not a full RAG related-work section).
+
+See `references-rag-citations.bib` for possible citations:
+
+- **`lewis2020rag`** (Lewis et al., NeurIPS 2020) is the canonical RAG paper. We
+  need it to say v1 was RAG-based and to define RAG at all.
+- **`agrawal2024mindfulrag`** (Mindful-RAG, 2024) studies RAG failure modes and
+  backs the v1 -> v2 decision: it helps explain why moving away from a naive RAG
+  pipeline was reasonable.
+- **`li2025lara`** (LaRA, 2025) benchmarks RAG against long-context LLMs and lands
+  on "no silver bullet". It's the strongest single citation for the future-work
+  framing, since it supports treating prompt/long-context vs retrieval as an open
+  trade-off rather than a solved question.
+- **`liu2024lostmiddle`** (Lost in the Middle, TACL 2024) shows long-context models
+  use the middle of the context poorly, which is why we can't just stuff all
+  curriculum material into a prompt and why the prompt-only approach has limits
+  worth testing.
+- **`sen2026grep`** ("Is Grep All You Need?", 2026) is the most on-point citation
+  for the tool-based grep idea. It's a very recent preprint, so we should lean on
+  it as a pointer to an emerging approach, not as settled evidence.
+- **`chen2021spar`** (SPAR, 2021) covers dense retrieval imitating sparse/keyword
+  retrieval, useful for the grep angle. Optional: keep it if the grep discussion
+  needs depth, drop it first if space is tight.
+- **`wang2026greprag`** (GrepRAG, 2026) does grep-like retrieval but for code
+  completion, so the domain is a bit off. Optional: only if we want a second grep
+  reference, and we'd flag the domain difference.
