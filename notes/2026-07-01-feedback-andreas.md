@@ -21,6 +21,7 @@ against how many lines it costs.
     abstract that names the three questions. Could also rename "design questions"
     to "research questions" so reviewers see a familiar label, though "design
     questions" was a deliberate choice for a design-case WIP. Low effort, worth it.
+    2026-07-02: Rename DQ -> RQ
 
 - **Frame the central claims as hypotheses.** "Hypothesen" is written next to the
   paragraph with the central position and contributions (p. 2). The idea seems to
@@ -32,6 +33,7 @@ against how many lines it costs.
     whether a small in-region model can hold the Socratic behaviour is genuinely
     testable, and turning just that one into an explicit hypothesis tied to Table 3
     would answer the note without distorting the rest. Suggest doing it narrowly.
+    2026-07-02: No hypotheses because of WIP
 
 - **Explain the school context for an international audience.** Near the intro
   heading: "HTL", "EQR 5", "VET School", plus a "Verweis" (reference) cue. HTL
@@ -42,6 +44,7 @@ against how many lines it costs.
     audience. One sentence does it: HTL is a five-year technical VET college with
     an exit qualification at EQF level 5, with a reference to the EQF framework. It
     clears up a real comprehension gap for almost no page cost.
+    2026-07-02: "Higher Technical Vocational Education in Austria"
 
 - **Explain the name "Novedu."** A margin note (p. 2) points at the project name.
   Right now the origin of "Novedu" isn't explained anywhere. **[uncertain]** The
@@ -51,6 +54,7 @@ against how many lines it costs.
     priority. A name gloss is nice to have, not something a reviewer will flag. Do
     it only if there's space left over. Better to check the "Test" reading with
     Andreas before reading too much into it.
+    2026-07-02: Novedu must be described (background, not just name), Novedu is the name of the software.
 
 - **Strengthen the research framing.** "Research" is written next to the
   contributions and design-questions block (p. 2), which reads as a nudge to make
@@ -59,6 +63,7 @@ against how many lines it costs.
     above. Both are really asking for the contribution to be easier to see up
     front. Treat them as one fix rather than two edits: a sharper contributions
     sentence in the intro likely covers both.
+    2026-07-02: Covered with DQ -> RQ
 
 ## Figures
 
@@ -83,6 +88,7 @@ against how many lines it costs.
   - **Response:** Agree, easy win. Move the "read descriptively, one pass = 2.8
     points" caveat down into the body text and keep the caption to a single line.
     Bonus: it frees a little space to offset the architecture figure above.
+    2026-07-02: Table caption must be single line, describe in text
 
 ## References
 
@@ -106,6 +112,7 @@ against how many lines it costs.
     deserve. For this paper, keep only the survey signals that drive the design
     (Table 1) and point to the fuller version as future work. Less page pressure
     now, and it sets up the next publication.
+    2026-07-02: Up to now pretest with IT bias, next academic year broaden questionnaire to additional schools, goal: remove bias
 
 ## Ideas for the next paper
 
@@ -184,3 +191,11 @@ See `references-rag-citations.bib` for possible citations:
 - **`wang2026greprag`** (GrepRAG, 2026) does grep-like retrieval but for code
   completion, so the domain is a bit off. Optional: only if we want a second grep
   reference, and we'd flag the domain difference.
+
+2026-07-02: Take 2-3 that fit nicely
+
+## Generals
+
+2026-07-02: Not "section", but "chapter" (for references)
+
+2026-07-02: "A general-purpose chatbot is a poor default for two reasons." is not clear.
