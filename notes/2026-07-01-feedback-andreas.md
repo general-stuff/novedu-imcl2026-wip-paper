@@ -72,6 +72,9 @@ against how many lines it costs.
     the same content in prose and directly fixes the "wall of text" feeling. The
     catch is page cost, so one well-made system figure rather than several, and
     ideally let it replace some Section 4 text instead of adding to it.
+  - **Status:** The student team has already been contacted about the architecture
+    diagram. This could be a great opportunity for them to contribute, since they
+    built the system and know the internals best.
 
 ## Tables
 
