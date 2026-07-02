@@ -196,6 +196,8 @@ See `references-rag-citations.bib` for possible citations:
 
 ## Generals
 
-2026-07-02: Not "section", but "chapter" (for references)
+2026-07-02: Not "section", but "chapter" (for references) — i.e. in-text
+cross-references should read "Chapter 4", not "Section 4" (despite LNCS using
+\section).
 
 2026-07-02: "A general-purpose chatbot is a poor default for two reasons." is not clear.
