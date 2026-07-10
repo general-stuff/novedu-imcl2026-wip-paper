@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'wip-paper/**'
+      - 'images/**'
+      - '.github/workflows/build-wip-paper.yml'
   workflow_dispatch:
 
 permissions:
@@ -24,12 +26,21 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --yes --no-install-recommends \
+            librsvg2-bin \
             lmodern \
+            poppler-utils \
             texlive-bibtex-extra \
             texlive-fonts-recommended \
             texlive-latex-base \
             texlive-latex-extra \
             texlive-latex-recommended
+
+      - name: Convert SVG figures to PDF
+        run: |
+          mkdir -p wip-paper/figures
+          rsvg-convert --format pdf \
+            --output wip-paper/figures/NoveduApproachesComparison.pdf \
+            images/NoveduApproachesComparison.paper.svg
 
       - name: Build PDF
         working-directory: wip-paper
@@ -38,6 +49,15 @@ jobs:
           bibtex novedu-wip
           pdflatex -interaction=nonstopmode -halt-on-error novedu-wip
           pdflatex -interaction=nonstopmode -halt-on-error novedu-wip
+
+      - name: Check page limit (8 pages incl. bibliography)
+        run: |
+          PAGES=$(pdfinfo wip-paper/novedu-wip.pdf | awk '/^Pages:/ {print $2}')
+          echo "PDF has $PAGES pages"
+          if [ "$PAGES" -gt 8 ]; then
+            echo "::error::novedu-wip.pdf has $PAGES pages, exceeding the 8-page limit."
+            exit 1
+          fi
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
