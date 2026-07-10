@@ -45,11 +45,19 @@ detail than the 8-page paper can hold.
 
 ## The paper
 
-The source is in [`wip-paper/`](wip-paper/). To build the PDF you need only the files in that
-folder (the top-level `llncs2e/` package is **not** required, as `wip-paper/` already contains its
-own copies of the LNCS class files).
+The source is in [`wip-paper/`](wip-paper/). To build the PDF you need the files in that
+folder plus the figure SVG in [`images/`](images/) (the top-level `llncs2e/` package is **not**
+required, as `wip-paper/` already contains its own copies of the LNCS class files).
+
+The figure is maintained as an SVG and converted to PDF at build time (requires `rsvg-convert`
+from *librsvg*, e.g. `brew install librsvg` / `apt install librsvg2-bin`):
 
 ```bash
+mkdir -p wip-paper/figures
+rsvg-convert --format pdf \
+  --output wip-paper/figures/NoveduApproachesComparison.pdf \
+  images/NoveduApproachesComparison.paper.svg
+
 cd wip-paper
 pdflatex novedu-wip
 bibtex   novedu-wip
