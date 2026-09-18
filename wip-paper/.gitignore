@@ -1,6 +1,6 @@
 # Files needed to build the PDF are NOT ignored:
 #   novedu-wip.tex, references.bib,
-#   llncs.cls, splncs03.bst, aliascnt.sty, remreset.sty
+#   llncs.cls, splncs04.bst, aliascnt.sty, remreset.sty
 
 # LaTeX build artifacts
 *.aux

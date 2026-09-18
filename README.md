@@ -25,7 +25,7 @@ detail than the 8-page paper can hold.
 │   ├── novedu-wip.tex                  Main LaTeX source (Springer LNCS class)
 │   ├── references.bib                  Bibliography
 │   ├── novedu-wip.pdf                  Compiled paper
-│   ├── llncs.cls, splncs03.bst, …      LNCS class files needed to build
+│   ├── llncs.cls, splncs04.bst, …      LNCS class files (IMCL 2026 LaTeX kit, llncs v2.24)
 │   └── .gitignore
 │
 ├── Novedu-Structured-Abstract-Stropek.pdf   The accepted structured abstract

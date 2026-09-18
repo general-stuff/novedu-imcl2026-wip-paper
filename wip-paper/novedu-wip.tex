@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage{microtype}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{array}
@@ -13,12 +14,10 @@
 \usepackage{url}
 \usepackage{hyperref}
 \renewcommand\UrlFont{\color{blue}\rmfamily}
-% This llncs.cls copy does not define \orcidID; provide a lightweight version.
-\providecommand{\orcidID}[1]{\href{https://orcid.org/#1}{\textsuperscript{[#1]}}}
 
 \begin{document}
 
-\title{Work-in-Progress: From Generic Chatbots to Teacher-Configurable AI Tutors: The Design and Evaluation of Novedu in Secondary Education}
+\title{Work-in-Progress: From Generic Chatbots to Teacher-Configurable AI Tutors -- The Design and Evaluation of Novedu in Secondary Education}
 \titlerunning{Work-in-Progress: Teacher-Configurable AI Tutors with Novedu}
 
 \author{Rainer Stropek\orcidID{0009-0003-0970-1663} \and Andreas Probst\orcidID{0000-0002-6699-0866} \and Peter Bauer\orcidID{0009-0001-7200-7143} \and Lukas Larndorfer \and Melanie Bauer}
@@ -31,7 +30,7 @@
 
 \begin{abstract}
 Secondary-school students increasingly use general-purpose chatbots for learning, but these systems are rarely aligned with classroom context, teacher intentions, or a school's privacy requirements. This work-in-progress paper presents \emph{Novedu}, a teacher-configurable AI-tutoring platform developed at HTL Leonding, an Austrian technical upper-secondary school. Our position is that a school cannot realistically align large language model (LLM) tutors by training models, but can align them institutionally through teacher-owned configuration, curricular grounding, privacy defaults, and evaluation: tutors are assembled from reusable, teacher-authored modules and served through in-region, open-weight models. A requirements survey ($n=318$) yields four central requirements (curricular grounding, factual reliability, configurable scaffolding, and aggregated oversight), each traced to a design response; a reproducible evaluation harness gives preliminary one-topic evidence that an in-region open-weight model scored at or above frontier baselines, while depending strongly on teacher-authored prompt detail. The platform and classroom evaluation remain ongoing.
-\keywords{generative AI in education $\cdot$ teacher-configurable AI tutors $\cdot$ pedagogical alignment $\cdot$ in-region open-weight LLMs}
+\keywords{Generative AI in education \and Teacher-configurable AI tutors \and Pedagogical alignment \and In-region open-weight LLMs.}
 \end{abstract}
 
 \section{Introduction}
@@ -100,7 +99,7 @@ The configurable-file idea generalizes beyond chat: a teacher mints a short \emp
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.6\textwidth]{figures/NoveduApproachesComparison}
+\includegraphics[width=0.55\textwidth]{figures/NoveduApproachesComparison}
 \caption{From composed products to an integrated platform: (a) the exploratory prototype; (b) the Novedu MVP serving the four activity types (Chapter~\ref{sec:activities}).}
 \label{fig:approaches}
 \end{figure}
@@ -148,7 +147,11 @@ The most important gap is that our strongest requirement outruns the implementat
 
 Novedu is a design case of how a school can move from exploratory AI use toward teacher-configurable, privacy-aware tutoring. The survey answers RQ1 with four requirements; the architecture answers RQ2 by making alignment a teacher-owned configuration problem rather than a model-training one; and the harness answers RQ3 tentatively: on one topic and a small sample, a small in-region model scored at or above frontier baselines in holding the Socratic stance, provided teachers supply detailed prompts.
 
-\bibliographystyle{splncs03}
+\begin{credits}
+\subsubsection{\discintname} The authors have no competing interests to declare that are relevant to the content of this article. Generative-AI tools were used to improve the language of the manuscript and to generate code for analyzing data such as the questionnaire results; the content was created, checked, and approved by the authors.
+\end{credits}
+
+\bibliographystyle{splncs04}
 \bibliography{references}
 
 \end{document}
